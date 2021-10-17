@@ -1,7 +1,7 @@
 const { Schema } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const reactionSchema = new Schema(
+const songReactionSchema = new Schema(
   {
     reactionBody: {
       type: Text,
@@ -28,4 +28,4 @@ const reactionSchema = new Schema(
   }
 );
 
-module.exports = reactionSchema;
+module.exports = songReactionSchema;

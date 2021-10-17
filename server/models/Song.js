@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const reactionSchema = require("./Reaction");
+const songReactionSchema = require("./SongReaction");
 const dateFormat = require("../utils/dateFormat");
 
 const songSchema = new Schema(
@@ -21,7 +21,7 @@ const songSchema = new Schema(
       type: String,
       ref: "User",
     },
-    // reactions: [reactionSchema],
+    reactions: [songReactionSchema],
   },
   {
     toJSON: {
@@ -30,7 +30,7 @@ const songSchema = new Schema(
   }
 );
 
-songSchema.virtual("reactionCount").get(function () {
+songSchema.virtual("songReaction").get(function () {
   return this.reactions.length;
 });
 

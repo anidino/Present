@@ -1,4 +1,4 @@
 const User = require("./User");
-const Song = require("./Song");
+const SongReaction = require("./Song");
 
-module.exports = { User, Song };
+module.exports = { User, SongReaction };
