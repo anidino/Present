@@ -5,9 +5,9 @@ const { User, Photo } = require("../models");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().select("-__v -password");
-      //   .populate("photos");
-      // .populate("songs");
+      return User.find().sort({ createdAt: -1 });
     },
   },
 };
+
+module.exports = resolvers;

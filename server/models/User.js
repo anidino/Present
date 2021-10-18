@@ -39,12 +39,12 @@ const userSchema = new Schema(
     photoName: {
       type: String,
     },
-    // photos: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Photo",
-    //   },
-    // ],
+    photos: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Photo",
+      },
+    ],
     // songs: [
     //   {
     //     type: Schema.Types.ObjectId,
