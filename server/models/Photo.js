@@ -8,11 +8,14 @@ const photoSchema = new mongoose.Schema(
       data: Buffer,
       contentType: String,
     },
-    // i need to check this
-    user_id: {
+    source: {
       type: String,
-      ref: "User",
     },
+    // i need to check this
+    // user_id: {
+    //   type: String,
+    //   ref: "User",
+    // },
   },
   {
     toJSON: {

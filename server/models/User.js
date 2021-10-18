@@ -36,18 +36,21 @@ const userSchema = new Schema(
       type: Date,
       required: true,
     },
-    photos: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Photo",
-      },
-    ],
-    songs: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Song",
-      },
-    ],
+    dashboardPhoto: {
+      type: String,
+    },
+    // photos: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Photo",
+    //   },
+    // ],
+    // songs: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Song",
+    //   },
+    // ],
     // playlists: [
     //   {
     //     type: Schema.Types.ObjectId,
