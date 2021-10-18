@@ -39,24 +39,18 @@ const userSchema = new Schema(
     dashboardPhoto: {
       type: String,
     },
-    // photos: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Photo",
-    //   },
-    // ],
-    // songs: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Song",
-    //   },
-    // ],
-    // playlists: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Playlist",
-    //   },
-    // ],
+    photos: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Photo",
+      },
+    ],
+    songs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Song",
+      },
+    ],
   },
   {
     toJSON: {
