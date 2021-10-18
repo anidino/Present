@@ -4,11 +4,12 @@ const dateFormat = require("../utils/dateFormat");
 const songReactionSchema = new Schema(
   {
     reactionBody: {
-      type: Text,
+      type: String,
       required: true,
+      maxLength: 500,
     },
     title: {
-      type: Text,
+      type: String,
       required: true,
     },
     username: {
