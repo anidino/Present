@@ -1,3 +1,4 @@
+//module jwt
 const jwt = require("jsonwebtoken");
 
 const secret = "mysecret"; //look up best generator for jwt or for secret

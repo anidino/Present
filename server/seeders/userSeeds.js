@@ -2,6 +2,8 @@ const { Schema, model } = require("mongoose");
 const User = require("../models/User");
 const connect = require("../config/connection");
 
+// ** IN SEEDERS DIRECTORY, TYPE ./userSeeds.js ** HIT TAB TO ENSURE CORRECT PATH ** //
+
 const aUser = new User({
   username: "ani89",
   email: "ani89@gmail.com",
