@@ -12,6 +12,12 @@ const typeDefs = gql`
     lastName: String
   }
 
+  type Photo {
+    _id: ID
+    imageLink: String
+    username: String
+  }
+
   type Query {
     users: [User]
   }

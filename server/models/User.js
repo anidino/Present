@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
+const Photo = require("./Photo");
 
 const userSchema = new Schema(
   {
@@ -39,6 +40,7 @@ const userSchema = new Schema(
     photoName: {
       type: String,
     },
+    // photos: [Photo],
     photos: [
       {
         type: Schema.Types.ObjectId,
