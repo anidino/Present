@@ -1,21 +1,21 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require("mongoose");
+// const dateFormat = require('../utils/dateFormat');
 
-const photoSchema = new mongoose.Schema(
+const photoSchema = new Schema(
   {
-    name: String,
-    desc: String,
-    img: {
-      data: Buffer,
-      contentType: String,
-    },
-    source: {
+    imageLink: {
       type: String,
+      //   required: true,
     },
-    // i need to check this
-    // user_id: {
-    //   type: String,
-    //   ref: "User",
+    // createdAt: {
+    //   type: Date,
+    //   default: Date.now,
+    //   get: timestamp => dateFormat(timestamp)
     // },
+    username: {
+      type: String,
+      required: true,
+    },
   },
   {
     toJSON: {
@@ -24,4 +24,40 @@ const photoSchema = new mongoose.Schema(
   }
 );
 
-module.exports = new mongoose.model("Photo", photoSchema);
+// photoSchema.virtual('reactionCount').get(function() {
+//   return this.reactions.length;
+// });
+
+const Photo = model("Photo", photoSchema);
+
+module.exports = Photo;
+
+// const photoSchema = new mongoose.Schema(
+//   {
+//     name: String,
+//     desc: String,
+//     img: {
+//       data: Buffer,
+//       contentType: String,
+//     },
+//     source: {
+//       type: String,
+//     },
+//     // i need to check this
+//     username: {
+//       type: String,
+//       required: true,
+//     },
+//   },
+//   {
+//     toJSON: {
+//       getters: true,
+//     },
+//   }
+// );
+
+// // const Photo = new mongoose.model("Photo", photoSchema);
+
+// module.exports = new mongoose.model("Photo", photoSchema);
+
+// // module.exports = Photo;
