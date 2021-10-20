@@ -23,7 +23,7 @@ const aUser2 = new User({
   firstName: "Ryan",
   lastName: "Jolle",
   dob: new Date("10-08-89"),
-  dashboardPhoto: "autumnScene.jpg",
+  dashboardPhoto: "beachSunset.jpg",
 });
 
 aUser2.save().then(() => console.log("SEEDED2"));

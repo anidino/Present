@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 // const dateFormat = require('../utils/dateFormat');
+​
 const photoSchema = new Schema(
   {
     imageLink: {
@@ -22,11 +23,15 @@ const photoSchema = new Schema(
     },
   }
 );
+​
 // photoSchema.virtual('reactionCount').get(function() {
 //   return this.reactions.length;
 // });
+​
 const Photo = model("Photo", photoSchema);
+​
 module.exports = Photo;
+​
 // const photoSchema = new mongoose.Schema(
 //   {
 //     name: String,
@@ -50,6 +55,9 @@ module.exports = Photo;
 //     },
 //   }
 // );
+​
 // // const Photo = new mongoose.model("Photo", photoSchema);
+​
 // module.exports = new mongoose.model("Photo", photoSchema);
+​
 // // module.exports = Photo;
