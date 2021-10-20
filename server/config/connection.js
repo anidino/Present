@@ -10,9 +10,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/present", {
 
 // import cloudinary for images
 cloudinary.config({
-  cloud_name: "anidino89",
-  api_key: "766138983891928",
-  api_secret: "yQf880jEyYWrmMZ3lVgi1gmKamU",
+  cloud_name: process.env.cloud_name,
+  api_key: process.env.api_key,
+  api_secret: process.env.api_secret,
 });
 
 module.exports = mongoose.connection;

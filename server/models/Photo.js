@@ -13,8 +13,8 @@ const photoSchema = new Schema(
     //   get: timestamp => dateFormat(timestamp)
     // },
     username: {
-      type: String,
-      //   required: true,
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   {
@@ -23,10 +23,6 @@ const photoSchema = new Schema(
     },
   }
 );
-
-// photoSchema.virtual('reactionCount').get(function() {
-//   return this.reactions.length;
-// });
 
 const Photo = model("Photo", photoSchema);
 
