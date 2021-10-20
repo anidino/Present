@@ -29,3 +29,16 @@ const aUser2 = new User({
 });
 
 aUser2.save().then(() => console.log("SEEDED2"));
+
+const aUser3 = new User({
+  username: "testUser123",
+  email: "testUser123@gmail.com",
+  password: "password",
+  firstName: "Ryan",
+  lastName: "Jolle",
+  dob: new Date("10-08-89"),
+  dashboardPhoto:
+    "https://res.cloudinary.com/anidino89/image/upload/v1634603953/images/autumnScene_x5sjyt.jpg",
+});
+
+aUser3.save().then(() => console.log("SEEDED3"));

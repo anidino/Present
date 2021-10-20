@@ -24,10 +24,6 @@ const photoSchema = new Schema(
   }
 );
 
-// photoSchema.virtual('reactionCount').get(function() {
-//   return this.reactions.length;
-// });
-
 const Photo = model("Photo", photoSchema);
 
 module.exports = Photo;
