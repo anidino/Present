@@ -15,3 +15,15 @@ const aUser = new User({
 });
 
 aUser.save().then(() => console.log("SEEDED"));
+
+const aUser2 = new User({
+  username: "ryanCodes",
+  email: "ryanCodes@gmail.com",
+  password: "password",
+  firstName: "Ryan",
+  lastName: "Jolle",
+  dob: new Date("10-08-89"),
+  dashboardPhoto: "autumnScene.jpg",
+});
+
+aUser2.save().then(() => console.log("SEEDED2"));
