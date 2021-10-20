@@ -10,6 +10,8 @@ const typeDefs = gql`
     email: String
     firstName: String
     lastName: String
+    dashboardPhoto: String
+    dob: String
   }
 
   type Photo {
