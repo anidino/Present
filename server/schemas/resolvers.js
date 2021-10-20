@@ -6,7 +6,8 @@ const { User, Photo } = require("../models");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().sort({ createdAt: -1 });
+      return await User.find().sort({ createdAt: -1 });
+      //   .populate("photos");
     },
     // photos: async (parent, { imageLink }) => {
     //   const params = imageLink ? { imageLink } : {};

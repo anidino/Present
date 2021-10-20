@@ -13,8 +13,8 @@ const photoSchema = new Schema(
     //   get: timestamp => dateFormat(timestamp)
     // },
     username: {
-      type: String,
-      //   required: true,
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   {

@@ -41,6 +41,8 @@ const userSchema = new Schema(
       type: String,
     },
     dashBoardPhoto: {
+      //   type: Schema.Types.ObjectId,
+      //   ref: "Photo",
       type: String,
     },
     photos: [
