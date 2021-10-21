@@ -11,11 +11,13 @@ function App() {
   return (
     <div>
       <Nav></Nav>
-      <main>
-        <Login></Login>
+      <Login></Login>
         <Signup></Signup>
+      <main>
+      <Search></Search>
+ 
         <Hero></Hero>
-        <Search></Search>
+
       </main>
     </div>
   );

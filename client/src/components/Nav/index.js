@@ -15,6 +15,12 @@ function Nav() {
               <a href="#profile"></a>
             </li>
             <li>
+              <span>Login</span>
+            </li>
+            <li>
+              <span>Signup</span>
+            </li>
+            <li>
               <span>Donate</span>
             </li>
             <li>
