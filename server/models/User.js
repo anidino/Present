@@ -23,19 +23,19 @@ const userSchema = new Schema(
     },
     firstName: {
       type: String,
-      required: true,
+      //   required: true,
       minlength: 2,
       maxlength: 25,
     },
     lastName: {
       type: String,
-      required: true,
+      //   required: true,
       minlength: 2,
       maxlength: 25,
     },
     dob: {
       type: Date,
-      required: true,
+      //   required: true,
     },
     photoName: {
       type: String,
