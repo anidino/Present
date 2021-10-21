@@ -2,7 +2,7 @@ import React from "react";
 
 function Nav() {
   return (
-    <section>
+    <section className="my-5">
       <h1 id="Nav"> Nav bar here</h1>
       <ul className="flex-row">
 
