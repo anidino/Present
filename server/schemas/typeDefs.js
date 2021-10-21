@@ -20,6 +20,11 @@ const typeDefs = gql`
     username: String
   }
 
+  type Auth {
+    token: ID!
+    user: [User]
+  }
+
   type Query {
     users: [User]
     photos: [Photo]
