@@ -14,6 +14,14 @@ const resolvers = {
       return Photo.find().sort({ createdAt: -1 });
     },
   },
+
+  Mutation: {
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+
+      return user;
+    },
+  },
 };
 
 module.exports = resolvers;
