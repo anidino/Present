@@ -10,10 +10,10 @@ import './App.css';
 function App() {
   return (
     <div>
+      <Nav></Nav>
       <main>
         <Login></Login>
         <Signup></Signup>
-        <Nav></Nav>
         <Hero></Hero>
         <Search></Search>
       </main>

@@ -1,19 +1,30 @@
 import React from "react";
 
 function Nav() {
-  return (
-    <section className="my-5">
-      <h1 id="Nav"> Nav bar here</h1>
-      <ul className="flex-row">
 
-        <li className="mx-1">
-          Profile</li>
-        <li>Donate</li>
-        <li>My memories</li>
-        <li className="mx-1">Penpals
-          </li>
-      </ul>
-    </section>
+  return (
+    <header>
+      <h2>
+        <a href="/">
+          <span role="img" aria-label="music"> ♫</span>Present
+        </a>
+        </h2>
+        <nav>
+          <ul className="flex-row">
+            <li className="mx-2">
+              <a href="#profile"></a>
+            </li>
+            <li>
+              <span>Donate</span>
+            </li>
+            <li>
+              <span>Penpals</span></li>
+          </ul>
+        </nav>
+   
+
+
+    </header>
   );
 
 }
