@@ -9,10 +9,10 @@ const resolvers = {
       return await User.find().sort({ createdAt: -1 });
       //   .populate("photos");
     },
-    // photos: async (parent, { imageLink }) => {
-    //   const params = imageLink ? { imageLink } : {};
-    //   return Photo.find(params).sort({ createdAt: -1 });
-    // },
+    photos: async (parent, { imageLink }) => {
+      //   const params = imageLink ? { imageLink } : {};
+      return Photo.find().sort({ createdAt: -1 });
+    },
   },
 };
 
