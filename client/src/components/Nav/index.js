@@ -1,41 +1,34 @@
 import React from "react";
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
 
-function Nav() {
 
+
+function Navigate() {
+
+  
   return (
-    <header>
-      <h2>
-        <a href="/">
-          <span role="img" aria-label="music"> ♫</span>Present
-        </a>
-        </h2>
-        <nav>
-          <ul className="flex-row">
-            <li className="mx-2">
-              <a href="#profile"></a>
-            </li>
-            <li>
-              <span>Login</span>
-            </li>
-            <li>
-              <span>Signup</span>
-            </li>
-            <li>
-              <span>Donate</span>
-            </li>
-            <li>
-              <span>Penpals</span></li>
-          </ul>
-        </nav>
+    <Navbar bg="light" variant="light">
+    <Container>
+    <Navbar.Brand href="#/"> <span role="img" aria-label="music"> ♫</span>Present</Navbar.Brand>
+    <Nav className="me-auto">
+      <Nav.Link href="#playlists">Playlists</Nav.Link>
+      <Nav.Link href="#donate">Donate</Nav.Link>
+      <Nav.Link href="#profile">My Profile</Nav.Link>
+      <Nav.Link href="#logout">Logout</Nav.Link>
+    </Nav>
+    </Container>
+  </Navbar>
    
 
 
-    </header>
+
   );
 
 }
 
-export default Nav;
+export default Navigate;
 
 
 

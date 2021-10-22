@@ -1,7 +1,7 @@
 import React from "react";
-import Hero from "../components/Hero";
+import Hero from "../components/Profile";
 import Nav from "../components/Nav";
-import Login from "../components/Login"
+import Login from "../components/Time"
 
 
 const Home = () => {

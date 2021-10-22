@@ -1,24 +1,33 @@
 import React from 'react';
-import Hero from './components/Hero';
-import Login from './components/Login';
+import Profile from './components/Profile';
+import Time from './components/Time';
+import Quote from './components/Quote';
 import Nav from './components/Nav';
 import Search from './components/Search';
-import Signup from './components/Signup';
-import logo from './logo.svg';
+import Gallery from './components/Gallery';
+import Donate from './components/Donate';
+import Logout from './components/Logout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 
 function App() {
   return (
     <div>
       <Nav></Nav>
-      <Login></Login>
-        <Signup></Signup>
+      <Time></Time>
+      <Quote></Quote>
+    
       <main>
       <Search></Search>
- 
-        <Hero></Hero>
-
+      <Gallery></Gallery>
+      <Donate></Donate>
+      <Profile></Profile>
+    
       </main>
+      <div>
+        <Logout></Logout>
+      </div>
     </div>
   );
 }
