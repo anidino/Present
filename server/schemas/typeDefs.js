@@ -12,6 +12,7 @@ const typeDefs = gql`
     lastName: String
     dashboardPhoto: String
     dob: String
+    photos: [Photo]
   }
 
   type Photo {
@@ -20,8 +21,24 @@ const typeDefs = gql`
     username: String
   }
 
+  type Auth {
+    token: String
+    user: User
+  }
+
   type Query {
     users: [User]
+    photos: [Photo]
+    user: User
+  }
+
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): User
+    addPhoto(photo_id: ID!): String!
+    deletePhotos(_ids: [ID]!): [String]
+    updateDashboardPhoto(_id: ID!, photo: String!): Photo
+    deleteDashboardPhoto(_id: ID!): Photo
   }
 `;
 
