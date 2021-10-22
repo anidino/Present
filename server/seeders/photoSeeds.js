@@ -4,7 +4,7 @@ const connect = require("../config/connection");
 const fs = require("fs");
 const cloudinary = require("cloudinary");
 
-// ** IN SEEDERS DIRECTORY, TYPE node ./photoseeds.js ** HIT TAB TO ENSURE CORRECT PATH ** // 
+// ** IN SEEDERS DIRECTORY, TYPE node ./photoseeds.js ** HIT TAB TO ENSURE CORRECT PATH ** //
 
 // image 1
 const image1 = new Photo({
@@ -13,7 +13,7 @@ const image1 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603959/images/pumpkinChai_eyguxs.jpg",
   // { public_id: "pumpkin_chai" },
   function(req, res) {
@@ -29,7 +29,7 @@ const image2 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603958/images/europeNight_hoqbk9.jpg",
 
   function(req, res) {
@@ -45,7 +45,7 @@ const image3 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603958/images/dankBreakfast_qrcp6n.jpg",
 
   function(req, res) {
@@ -61,7 +61,7 @@ const image4 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603957/images/pugRunning_gjkrrs.jpg",
 
   function(req, res) {
@@ -77,7 +77,7 @@ const image5 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603957/images/ornaments_hlkxbq.jpg",
 
   function(req, res) {
@@ -93,7 +93,7 @@ const image6 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603956/images/coffee_mxbu6c.jpg",
 
   function(req, res) {
@@ -109,7 +109,7 @@ const image7 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603956/images/cherryBlossoms_lppsxr.jpg",
 
   function(req, res) {
@@ -125,7 +125,7 @@ const image8 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603956/images/greenLandscape_ecxmfi.jpg",
 
   function(req, res) {
@@ -141,7 +141,7 @@ const image9 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603955/images/dogWithFan_la2sxc.jpg",
 
   function(req, res) {
@@ -157,7 +157,7 @@ const image10 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603954/images/kittenPuppy_qan5h2.jpg",
 
   function(req, res) {
@@ -173,7 +173,7 @@ const image11 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603953/images/autumnScene_x5sjyt.jpg",
 
   function(req, res) {
@@ -189,7 +189,7 @@ const image12 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603952/images/cloudsWalkway_jlq5ij.jpg",
 
   function(req, res) {
@@ -205,7 +205,7 @@ const image13 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603952/images/holidayScene_tcxqa4.jpg",
 
   function(req, res) {
@@ -221,7 +221,7 @@ const image14 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603951/images/blueSea_ov5uoe.jpg",
 
   function(req, res) {
@@ -237,7 +237,7 @@ const image15 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603949/images/beautifulMountains_ablbtg.jpg",
 
   function(req, res) {
@@ -253,7 +253,7 @@ const image16 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603948/images/beachSunset_tutiqk.jpg",
 
   function(req, res) {
@@ -269,7 +269,7 @@ const image17 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603948/images/catsLaptop_z0mu6p.jpg",
 
   function(req, res) {
@@ -285,7 +285,7 @@ const image18 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603948/images/greece_mbou6a.jpg",
 
   function(req, res) {
@@ -301,7 +301,7 @@ const image19 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603947/images/greenHills_qfla5d.jpg",
 
   function(req, res) {
@@ -317,7 +317,7 @@ const image20 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603946/images/waterCherryB_fxendx.jpg",
 
   function(req, res) {
@@ -333,7 +333,7 @@ const image21 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603946/images/whiteFlowersGreen_oh6wq2.jpg",
 
   function(req, res) {
@@ -349,7 +349,7 @@ const image22 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603946/images/warmBeverages_mbjest.jpg",
 
   function(req, res) {
@@ -365,7 +365,7 @@ const image23 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603944/images/grandCanyon_ykrtkb.jpg",
 
   function(req, res) {
@@ -381,7 +381,7 @@ const image24 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603943/images/floralWallpaper_lkexxg.jpg",
 
   function(req, res) {
@@ -397,7 +397,7 @@ const image25 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603942/images/whiteFlowerRed_tuaddw.jpg",
 
   function(req, res) {
@@ -413,7 +413,7 @@ const image26 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603942/images/puppyWithRose_qgdmxz.jpg",
 
   function(req, res) {
@@ -429,7 +429,7 @@ const image27 = new Photo({
   img: {
     contentType: "image/jpg",
   },
-  source:
+  imageLink:
     "https://res.cloudinary.com/anidino89/image/upload/v1634603942/images/tropicalBeach_tqndol.jpg",
 
   function(req, res) {
