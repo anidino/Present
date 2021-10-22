@@ -4,9 +4,10 @@ import Login from './components/Login';
 import Nav from './components/Nav';
 import Search from './components/Search';
 import Gallery from './components/Gallery';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './components/Signup';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (

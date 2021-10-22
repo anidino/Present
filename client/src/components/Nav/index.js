@@ -10,7 +10,7 @@ function Nav() {
           <span role="img" aria-label="music"> ♫</span>Present
         </a>
         </h2>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-light">
           <ul className="flex-row">
             <li className="mx-2">
               <a href="#profile">My Dashboard</a>
