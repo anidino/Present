@@ -5,6 +5,8 @@ import Quote from './components/Quote';
 import Nav from './components/Nav';
 import Search from './components/Search';
 import Gallery from './components/Gallery';
+import Donate from './components/Donate';
+import Logout from './components/Logout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -19,10 +21,13 @@ function App() {
       <main>
       <Search></Search>
       <Gallery></Gallery>
- 
-        <Profile></Profile>
-
+      <Donate></Donate>
+      <Profile></Profile>
+    
       </main>
+      <div>
+        <Logout></Logout>
+      </div>
     </div>
   );
 }
