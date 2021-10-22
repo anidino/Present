@@ -1,5 +1,6 @@
 import React from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
+import photo from "../../assets/forest.jpg";
 
 function Gallery(props) {
     const currentCategory = {
@@ -12,6 +13,8 @@ function Gallery(props) {
             <p>{currentCategory.description}</p>
             <div>
                 <img src={photo}
+                alt='active'
+                className="img-thumbnail mx-1"
                 />
             </div>
         </section>

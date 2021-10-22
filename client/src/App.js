@@ -5,8 +5,8 @@ import Nav from './components/Nav';
 import Search from './components/Search';
 import Gallery from './components/Gallery';
 import Signup from './components/Signup';
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

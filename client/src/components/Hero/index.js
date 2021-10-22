@@ -1,5 +1,5 @@
 import React from 'react';
-import weird from "../../assets/cat/cat.jpg";
+import weird from "../../assets/cat.jpg";
 import joy from "../../assets/joy.jpg";
 import explore from "../../assets/explore.jpg";
 import forest from "../../assets/forest.jpg";

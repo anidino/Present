@@ -1,7 +1,8 @@
 import React from "react";
 
-function Nav() {
 
+
+function Nav() {
   return (
     <header>
       <h2>
@@ -9,22 +10,20 @@ function Nav() {
           <span role="img" aria-label="music"> ♫</span>Present
         </a>
         </h2>
-        <nav>
+        <nav class="navbar navbar-dark bg-dark">
           <ul className="flex-row">
             <li className="mx-2">
-              <a href="#profile"></a>
+              <a href="#profile">My Dashboard</a>
             </li>
-            <li>
-              <span>Login</span>
+            <li className="mx-2">
+              <a href="#login">My Profile</a>
             </li>
-            <li>
-              <span>Signup</span>
+            <li className="mx-2">
+              <a href="#donate">Donate</a>
             </li>
-            <li>
-              <span>Donate</span>
+            <li className="mx-2">
+              <a href="#login">Log Out</a>
             </li>
-            <li>
-              <span>Penpals</span></li>
           </ul>
         </nav>
    
