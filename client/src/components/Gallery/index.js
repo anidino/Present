@@ -18,9 +18,17 @@ function Gallery() {
                         <Card>
                             <Card.Img variant="top" src={weird} />
                             <Card.Body>
-                                <Card.Title>Fun</Card.Title>
+                              
                                 <Card.Text>
-                                    My notes here. i.e. How I feel when listening to this and what I remember.
+                                    <Form>
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+    <Form.Label>Happy</Form.Label>
+    <Form.Control as="textarea" placeholder="Notes here. Memories and Feelings this music brings."rows={3} />
+  </Form.Group>
+
+
+                                    </Form>
+                                   
           </Card.Text>
                             </Card.Body>
                         </Card>
