@@ -61,32 +61,32 @@ module.exports = Photo;
 
 // module.exports = Photo;
 
-const photoSchema = new Schema(
-  {
-    name: String,
-    desc: String,
-    img: {
-      data: Buffer,
-      contentType: String,
-    },
-    source: {
-      type: String,
-    },
-    // i need to check this
-    // username: {
-    //   type: String,
-    //   required: true,
-    // },
-  },
-  {
-    toJSON: {
-      getters: true,
-    },
-  }
-);
+// const photoSchema = new Schema(
+//   {
+//     name: String,
+//     desc: String,
+//     img: {
+//       data: Buffer,
+//       contentType: String,
+//     },
+//     source: {
+//       type: String,
+//     },
+//     // i need to check this
+//     // username: {
+//     //   type: String,
+//     //   required: true,
+//     // },
+//   },
+//   {
+//     toJSON: {
+//       getters: true,
+//     },
+//   }
+// );
 
-const Photo = new model("Photo", photoSchema);
+// const Photo = new model("Photo", photoSchema);
 
-// module.exports = new mongoose.model("Photo", photoSchema);
+// // module.exports = new mongoose.model("Photo", photoSchema);
 
-module.exports = Photo;
+// module.exports = Photo;

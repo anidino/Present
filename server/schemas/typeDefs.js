@@ -47,13 +47,18 @@ const typeDefs = gql`
     users: [User]
     photos: [Photo]
     user: User
+    songreaction: SongReaction
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
+    logout()
     addUser(username: String!, email: String!, password: String!): User
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
+    addSongReaction(title: String!, reactionBody: String!): SongReaction
+    updateSongReaction(_id: ID!, title: String, reactionBody: String): SongReaction
+    deleteSongReaction(_id: ID!): SongReaction
     updateDashboardPhoto(_id: ID!, photo: String!): Photo
     deleteDashboardPhoto(_id: ID!): Photo
   }
