@@ -1,18 +1,20 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Photo } = require("../models");
+const { User, Photo, DashboardPhoto } = require("../models");
 
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     user: async (parent, args, context) => {
-      //return one user
-
       //context is the req object which is updated in the auth middleware
+      // RETURNS ONE USER WITH PHOTO ATM
       if (true) {
         const userData = await User.findOne({ _id: context.user._id })
+          // console
+          //   .log(context.user._id)
           .select("-__v -password")
           .populate("photos");
+        //   .populate("dashboardPhoto");
         //   .populate('photos')
         //   .populate('playlist');
 
@@ -29,10 +31,15 @@ const resolvers = {
       //   const params = imageLink ? { imageLink } : {};
       return Photo.find().sort({ createdAt: -1 });
     },
+    dashboardPhoto: async (parent, { imageLink }) => {
+      //   const params = imageLink ? { imageLink } : {};
+      return DashboardPhoto.find().sort({ createdAt: -1 });
+    },
   },
 
   Mutation: {
     addUser: async (parent, args) => {
+      //   console.log("ARGS **********", args);
       const user = await User.create(args);
       const token = signToken(user);
 
@@ -57,11 +64,11 @@ const resolvers = {
 
     // User Photos //
     addPhoto: async (parent, args, context) => {
-      console.log({ ...context.user, ...args });
+      console.log("LOOOK HERE **********", { ...context.user, ...args });
       let updated_photos = [context.user.photos, { _id: args.photo_id }];
       let result = await User.updateOne(
         { _id: context.user._id },
-        { $push: { photos: args.photo_id } }
+        { $push: { photos: args.photo_id } } //PUSHES PHOTO_ID ATTRIBUTE ON PHOTO MODEL
       );
       console.log({ result });
       return args.photo_id;
@@ -72,7 +79,7 @@ const resolvers = {
     },
     deletePhotos: async (parent, args, context) => {
       //take args._ids
-      //delete each photo from their collection /cloudinary and increase counter
+      //delete each photo from their collection /cloudinary if they uploaded their own and increase counter
       const { _ids: ids_to_delete } = args;
       console.log({ args });
       try {
@@ -102,7 +109,19 @@ const resolvers = {
       //implement code to delete on cldnry
     },
 
-    updateDashboardPhoto: async (parent, args, context) => {},
+    addDashboardPhoto: async (parent, args, context) => {
+      console.log("LOOOK HERE **********", { ...context.user, ...args });
+      let updated_photo = [
+        context.user.dashboardPhoto,
+        { _id: args.dashboard_id },
+      ];
+      let result = await User.updateOne(
+        { _id: context.user._id },
+        { $push: { dashboardPhoto: args.dashboard_id } } //PUSHES dashboard_ID ATTRIBUTE ON PHOTO MODEL
+      );
+      console.log({ result });
+      return args.dashboard_id;
+    },
     deleteDashboardPhoto: async (parent, args, context) => {
       //delete the dashboard photo of authenticated user
     },
