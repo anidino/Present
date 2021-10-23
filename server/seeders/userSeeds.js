@@ -42,3 +42,29 @@ const aUser3 = new User({
 });
 
 aUser3.save().then(() => console.log("SEEDED3"));
+
+const aUser4 = new User({
+  username: "jorgeCodes",
+  email: "jorgeCodes@gmail.com",
+  password: "password",
+  firstName: "Jorge",
+  lastName: "Codes",
+  dob: new Date("10-08-89"),
+  dashboardPhoto:
+    "https://res.cloudinary.com/anidino89/image/upload/v1634603953/images/autumnScene_x5sjyt.jpg",
+});
+
+aUser4.save().then(() => console.log("SEEDED4"));
+
+const aUser5 = new User({
+  username: "devinCodes",
+  email: "devinCodes@gmail.com",
+  password: "password",
+  firstName: "Devin",
+  lastName: "Codes",
+  dob: new Date("10-08-89"),
+  dashboardPhoto:
+    "https://res.cloudinary.com/anidino89/image/upload/v1634603953/images/autumnScene_x5sjyt.jpg",
+});
+
+aUser5.save().then(() => console.log("SEEDED5"));
