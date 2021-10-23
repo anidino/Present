@@ -13,12 +13,14 @@ const typeDefs = gql`
     dashboardPhoto: String
     dob: String
     photos: [Photo]
+	
   }
 
   type Photo {
     _id: ID
     imageLink: String
     username: String
+	
   }
 
   type Auth {
