@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 
 function Quote(props) {
@@ -27,15 +27,15 @@ function Quote(props) {
     };
 
     return (
-        <div class="quotes-container">
+        <div class="container-fluid">
             <div id="quotes-box">
                 <Container id="text"> {quote} </Container>
                 <Container id="author"> {author}
                 </Container>
             </div>
-            <Button onClick={handleClick} id="new-quote">
+            <button class="quote-button" onClick={handleClick} id="new-quote">
                 NEW QUOTE
-        </Button>
+        </button>
         </div>
 
 
