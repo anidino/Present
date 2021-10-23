@@ -42,7 +42,7 @@ const userSchema = new Schema(
     },
     dashboardPhoto: {
       //   type: Schema.Types.ObjectId,
-      //   ref: "Photo",
+      ref: "DashboardPhoto",
       type: String,
     },
     photos: [

@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Photo } = require("../models");
+const { User, Photo, DashboardPhoto } = require("../models");
 
 const { signToken } = require("../utils/auth");
 
@@ -14,6 +14,7 @@ const resolvers = {
           //   .log(context.user._id)
           .select("-__v -password")
           .populate("photos");
+        //   .populate("dashboardPhoto");
         //   .populate('photos')
         //   .populate('playlist');
 
@@ -29,6 +30,10 @@ const resolvers = {
     photos: async (parent, { imageLink }) => {
       //   const params = imageLink ? { imageLink } : {};
       return Photo.find().sort({ createdAt: -1 });
+    },
+    dashboardPhoto: async (parent, { imageLink }) => {
+      //   const params = imageLink ? { imageLink } : {};
+      return DashboardPhoto.find().sort({ createdAt: -1 });
     },
   },
 
@@ -104,7 +109,19 @@ const resolvers = {
       //implement code to delete on cldnry
     },
 
-    updateDashboardPhoto: async (parent, args, context) => {},
+    addDashboardPhoto: async (parent, args, context) => {
+      console.log("LOOOK HERE **********", { ...context.user, ...args });
+      let updated_photo = [
+        context.user.dashboardPhoto,
+        { _id: args.dashboard_id },
+      ];
+      let result = await User.updateOne(
+        { _id: context.user._id },
+        { $push: { dashboardPhoto: args.dashboard_id } } //PUSHES dashboard_ID ATTRIBUTE ON PHOTO MODEL
+      );
+      console.log({ result });
+      return args.dashboard_id;
+    },
     deleteDashboardPhoto: async (parent, args, context) => {
       //delete the dashboard photo of authenticated user
     },

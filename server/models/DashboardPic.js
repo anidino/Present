@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 // const dateFormat = require('../utils/dateFormat');
 
-const photoSchema = new Schema(
+const dashboardphotoSchema = new Schema(
   {
     name: String,
     desc: String,
@@ -30,6 +30,6 @@ const photoSchema = new Schema(
   }
 );
 
-const Photo = model("Photo", photoSchema);
+const DashboardPhoto = model("DashboardPhoto", dashboardphotoSchema);
 
-module.exports = Photo;
+module.exports = DashboardPhoto;

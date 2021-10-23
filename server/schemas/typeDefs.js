@@ -10,17 +10,21 @@ const typeDefs = gql`
     email: String
     firstName: String
     lastName: String
-    dashboardPhoto: String
+    dashboardPhoto: [DashboardPhoto]
     dob: String
     photos: [Photo]
-	
+  }
+
+  type DashboardPhoto {
+    _id: ID
+    imageLink: String
+    username: String
   }
 
   type Photo {
     _id: ID
     imageLink: String
     username: String
-	
   }
 
   type Auth {
@@ -32,6 +36,7 @@ const typeDefs = gql`
     users: [User]
     photos: [Photo]
     user: User
+    dashboardPhoto: [DashboardPhoto]
   }
 
   type Mutation {
@@ -39,7 +44,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): User
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
-    updateDashboardPhoto(_id: ID!, photo: String!): Photo
+    addDashboardPhoto(dashboard_id: ID!): String!
     deleteDashboardPhoto(_id: ID!): Photo
   }
 `;
