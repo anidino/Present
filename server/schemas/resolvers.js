@@ -58,10 +58,15 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+<<<<<<< HEAD
     logout: async (parent, args ) => {
       // logout mutation goes here
     },
     //dashboardPhoto - crud
+=======
+
+    // User Photos //
+>>>>>>> main
     addPhoto: async (parent, args, context) => {
       console.log({ ...context.user, ...args });
       let updated_photos = [context.user.photos, { _id: args.photo_id }];
@@ -92,7 +97,7 @@ const resolvers = {
         let new_photos = old_photos.filter((ph) => !ids_to_delete.includes(ph));
         // console.log({ new_photos });
 
-        // update the phoos for the loged in user
+        // update the photos for the loged in user
         const photos = await User.updateOne(
           { _id: context.user._id },
           { $set: { photos: new_photos } }
@@ -104,7 +109,7 @@ const resolvers = {
         // throw new Error("Delete operation failed");
         console.log(error);
       }
-      //add if cloudinary delete is required
+      //add if cloudinary delete is required (if we are to have the upload your own photo)
       //implement code to delete on cldnry
     },
     addSongReaction: async(parent, args, context) => {
@@ -123,7 +128,6 @@ const resolvers = {
     deleteDashboardPhoto: async (parent, args, context) => {
       //delete the dashboard photo of authenticated user
     },
-    //photos - crud
   },
 };
 

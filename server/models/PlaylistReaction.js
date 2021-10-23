@@ -1,7 +1,7 @@
 const { Schema } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const songReactionSchema = new Schema(
+const playlistReactionSchema = new Schema(
   {
     reactionBody: {
       type: String,
@@ -29,4 +29,4 @@ const songReactionSchema = new Schema(
   }
 );
 
-module.exports = songReactionSchema;
+module.exports = playlistReactionSchema;
