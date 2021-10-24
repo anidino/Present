@@ -42,7 +42,7 @@ const userSchema = new Schema(
     },
     // dashboardPhoto: {
     //   //   type: Schema.Types.ObjectId,
-    //   ref: "DashboardPhoto",
+    //   //   ref: "Photo",
     //   type: String,
     // },
     photos: [
@@ -81,9 +81,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual("playlistCount").get(function () {
-  return this.playlists.length;
-});
+// userSchema.virtual("songCount").get(function () {
+//   return this.songs.length;
+// });
 
 const User = model("User", userSchema);
 
