@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&family=Roboto:ital,wght@1,900&display=swap');
+
+
 main {
 	margin: 0 auto;
 	max-width: 90%;
@@ -14,17 +19,13 @@ main {
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
   --spacing-five: calc(2.5rem);
+  --body-fonts: "Dancing Script", "Martel Sans", "Roboto";
 
 }
 
 * {
   box-sizing: border-box;
 }
-
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&family=Roboto:ital,wght@1,900&display=swap');
 
 body {
   margin: 0;
@@ -35,11 +36,10 @@ body {
   letter-spacing: .1em;
   background: var(--error);
   color: var(--light);
-  font-family: 'Glacial Indifference';
+  font-family: 'Glacial Indifference' sans-serif;
   background-color: var(--dark);
 
 }
-
 
 
 h1,
@@ -48,7 +48,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Marta';
+  font-family: 'Martel Sans', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -56,6 +56,7 @@ h6 {
 
 h1 {
   font-size: 2.25rem;
+  font-family: 'Martel Sans', sans-serif;
 }
 
 h2 {
@@ -95,11 +96,14 @@ a:hover {
 
 #text {
   color: white;
+  font-family: 'Dancing Script';
+  font-size: 2rem;
 }
 
 #author {
-  color: var(--darker);
+  color:var(--error);
   float: right;
+  font-family: 'Roboto', sans-serif;
 }
 
 .quote-button {
@@ -110,6 +114,12 @@ a:hover {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-  
+    font-size: 16px;  
+}
+
+#credit {
+  color:var(--error);
+  margin-left: 80%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
 }
