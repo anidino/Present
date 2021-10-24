@@ -3,7 +3,6 @@ import Profile from './components/Profile';
 import Time from './components/Time';
 import Quote from './components/Quote';
 import Nav from './components/Nav';
-import Search from './components/Search';
 import Gallery from './components/Gallery';
 import Donate from './components/Donate';
 import Logout from './components/Logout';
@@ -28,7 +27,6 @@ function App() {
       </div>
     
       <main>
-      <Search></Search>
       <Playlists></Playlists>
       <Gallery></Gallery>
       <Donate></Donate>
