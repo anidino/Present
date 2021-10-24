@@ -9,13 +9,10 @@ main {
   padding: 50px 30px;
 }
 :root {
-  --primary: #C37B89;
-  --secondary: #D8E9A8;
-  --tertiary: #EAE7C6;
-  --light: #fafafa;
-  --dark: #1E5128;
-  --darker: #111111;
-  --error: #4E9F3D;
+  --primary: #7A987C;
+  --secondary: #1E3023;
+  --tertiary: #7C8C84;
+  --light: #99AD90;
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
   --spacing-five: calc(2.5rem);
@@ -34,10 +31,15 @@ body {
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: .1em;
-  background: var(--error);
   color: var(--light);
   font-family: 'Glacial Indifference' sans-serif;
-  background-color: var(--dark);
+  background-image: url("../src/assets/leaves.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
 }
 
@@ -85,7 +87,7 @@ p {
 }
 
 a {
-  color: var(--dark);
+  color: var(--primary);
   text-decoration: none;
   font-weight: bold;
 }
@@ -94,14 +96,22 @@ a:hover {
   text-decoration: underline;
 }
 
+#nav {
+  background-color: var(--primary);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
 #text {
-  color:var(--dark);
+  color:var(--primary);
   font-family: 'Dancing Script';
   font-size: 2rem;
 }
 
 #author {
-  color:var(--error);
+  color:var(--tertiary);
   float: right;
   font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
@@ -109,9 +119,9 @@ a:hover {
 }
 
 .quote-button {
-    background-color: var(--error);
+    background-color: var(--tertiary);
     border: none;
-    color: white;
+    color: var(--secondary);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -120,7 +130,7 @@ a:hover {
 }
 
 #credit {
-  color:var(--error);
+  color:var(--tertiary);
   margin-left: 80%;
   font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
@@ -129,4 +139,11 @@ a:hover {
 
 #quotes-box {
   background-color: var(--secondary);
+  margin-top: 310px;
+}
+
+#wave {
+  color: white;
+  font-size: 3rem;
+  font-family: 'Dancing Script';
 }

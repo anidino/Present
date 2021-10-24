@@ -14,7 +14,6 @@ import pray from '../../assets/pray.jpg';
 
 function Gallery() {
     return (
-
         // i think this is how we will need to set them up once wee get API data
         //     <Container>
         //     <Row>
