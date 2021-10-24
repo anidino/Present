@@ -22,6 +22,10 @@ main {
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300;400&family=Roboto:ital,wght@1,900&display=swap');
+
 body {
   margin: 0;
   padding: 0;
@@ -35,6 +39,8 @@ body {
   background-color: var(--dark);
 
 }
+
+
 
 h1,
 h2,
