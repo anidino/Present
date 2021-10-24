@@ -7,6 +7,8 @@ import Search from './components/Search';
 import Gallery from './components/Gallery';
 import Donate from './components/Donate';
 import Logout from './components/Logout';
+import Logo from './components/Logo';
+import Playlists from './components/Playlists';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -16,10 +18,12 @@ function App() {
     <div>
       <Nav></Nav>
       <Time></Time>
+      <Logo></Logo>
       <Quote></Quote>
     
       <main>
       <Search></Search>
+      <Playlists></Playlists>
       <Gallery></Gallery>
       <Donate></Donate>
       <Profile></Profile>
