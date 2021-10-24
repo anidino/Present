@@ -16,11 +16,11 @@ const playlistReactionSchema = new Schema(
       type: String,
       required: true,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
+    // createdAt: {
+    //   type: Date,
+    //   default: Date.now,
+    //   get: (timestamp) => dateFormat(timestamp),
+    // },
   },
   {
     toJSON: {
@@ -28,5 +28,6 @@ const playlistReactionSchema = new Schema(
     },
   }
 );
+
 
 module.exports = playlistReactionSchema;

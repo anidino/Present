@@ -26,8 +26,9 @@ const typeDefs = gql`
   type Playlist {
     _id: ID
     playlistUrl: String
+    playlistName: String
     username: String
-    reactions: [SongReaction]
+    reactions: [PlaylistReaction]
   }
 
   type PlaylistReaction {
@@ -35,7 +36,6 @@ const typeDefs = gql`
     title: String
     reactionBody: String
     username: String
-    createdAt: String
   }
 
   type Auth {
@@ -48,7 +48,7 @@ const typeDefs = gql`
     photos: [Photo]
     user: User
     playlists: [Playlist]
-    playlistreaction: PlaylistReaction
+    playlistreaction: [PlaylistReaction]
   }
 
   type Mutation {
@@ -56,9 +56,18 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): User
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
-    addPlaylist(playlistUrl: String!, playlistName: String!)
+    addPlaylist(playlistUrl: String!, playlistName: String!) : Playlist
   }
 `;
 
 // export the typeDefs
 module.exports = typeDefs;
+
+
+
+
+
+
+
+
+

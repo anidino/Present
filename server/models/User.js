@@ -40,11 +40,11 @@ const userSchema = new Schema(
     photoName: {
       type: String,
     },
-    dashboardPhoto: {
-      //   type: Schema.Types.ObjectId,
-      //   ref: "Photo",
-      type: String,
-    },
+    // dashboardPhoto: {
+    //   //   type: Schema.Types.ObjectId,
+    //   //   ref: "Photo",
+    //   type: String,
+    // },
     photos: [
       {
         type: Schema.Types.ObjectId,
@@ -80,9 +80,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual("songCount").get(function () {
-  return this.songs.length;
-});
+// userSchema.virtual("songCount").get(function () {
+//   return this.songs.length;
+// });
 
 const User = model("User", userSchema);
 

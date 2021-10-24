@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Photo, SongReaction } = require("../models");
+const { User, Photo, PlaylistReaction,  } = require("../models");
 const Playlist = require("../models/Playlist");
 
 const { signToken } = require("../utils/auth");
@@ -32,7 +32,7 @@ const resolvers = {
       return Photo.find().sort({ createdAt: -1 });
     },
     playlists: async(parent, args) => {
-      return Playlist.find();
+      return await Playlist.find({});
     }
   },
 
