@@ -20,6 +20,13 @@ const typeDefs = gql`
     username: String
   }
 
+  type Playlist {
+    _id: ID
+    playlistUrl: String
+    playlistName: String
+    username: String
+  }
+
   type Photo {
     _id: ID
     imageLink: String
