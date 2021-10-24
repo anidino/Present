@@ -23,14 +23,14 @@ const typeDefs = gql`
     username: String
   }
 
-  type Song {
+  type Playlist {
     _id: ID
-    songUrl: String
+    playlistUrl: String
     username: String
     reactions: [SongReaction]
   }
 
-  type SongReaction {
+  type PlaylistReaction {
     _id: ID
     title: String
     reactionBody: String
@@ -47,20 +47,16 @@ const typeDefs = gql`
     users: [User]
     photos: [Photo]
     user: User
-    songreaction: SongReaction
+    playlists: [Playlist]
+    playlistreaction: PlaylistReaction
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    logout()
     addUser(username: String!, email: String!, password: String!): User
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
-    addSongReaction(title: String!, reactionBody: String!): SongReaction
-    updateSongReaction(_id: ID!, title: String, reactionBody: String): SongReaction
-    deleteSongReaction(_id: ID!): SongReaction
-    updateDashboardPhoto(_id: ID!, photo: String!): Photo
-    deleteDashboardPhoto(_id: ID!): Photo
+    addPlaylist(playlistUrl: String!, playlistName: String!)
   }
 `;
 

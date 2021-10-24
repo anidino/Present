@@ -1,5 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Photo, SongReaction } = require("../models");
+const Playlist = require("../models/Playlist");
 
 const { signToken } = require("../utils/auth");
 
@@ -30,9 +31,9 @@ const resolvers = {
       //   const params = imageLink ? { imageLink } : {};
       return Photo.find().sort({ createdAt: -1 });
     },
-    songreaction: async(parent, args, context) => {
-      return SongReaction.find({}).sort({ createdAt: -1 });
-    },
+    playlists: async(parent, args) => {
+      return Playlist.find();
+    }
   },
 
   Mutation: {
@@ -58,15 +59,8 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-<<<<<<< HEAD
-    logout: async (parent, args ) => {
-      // logout mutation goes here
-    },
-    //dashboardPhoto - crud
-=======
 
     // User Photos //
->>>>>>> main
     addPhoto: async (parent, args, context) => {
       console.log({ ...context.user, ...args });
       let updated_photos = [context.user.photos, { _id: args.photo_id }];
@@ -112,21 +106,8 @@ const resolvers = {
       //add if cloudinary delete is required (if we are to have the upload your own photo)
       //implement code to delete on cldnry
     },
-    addSongReaction: async(parent, args, context) => {
-      return SongReaction.create(args);
-    },
-    updateSongReaction: async(parent, args, context) => {
-      return SongReaction.updateOne({ _id: args._id });
-
-    },
-    deleteSongReaction: async(parent, args, context) => {
-    
-    },
-    updateDashboardPhoto: async (parent, args, context) => {
-
-    },
-    deleteDashboardPhoto: async (parent, args, context) => {
-      //delete the dashboard photo of authenticated user
+    addPlaylist: async (parent, args, context) => {
+      return Playlist.create(args);
     },
   },
 };
