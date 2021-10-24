@@ -104,6 +104,8 @@ a:hover {
   color:var(--error);
   float: right;
   font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  padding-top: 1.2rem;
 }
 
 .quote-button {
