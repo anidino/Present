@@ -139,11 +139,17 @@ a:hover {
 
 #quotes-box {
   background-color: var(--secondary);
-  margin-top: 310px;
+  margin-top: 2rem;
 }
 
 #wave {
   color: white;
   font-size: 3rem;
   font-family: 'Dancing Script';
+}
+
+.subhead {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--secondary);
+  font-size: 1.75rem;
 }

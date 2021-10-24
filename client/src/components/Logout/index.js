@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 function Logout() {
     return (
 <section className="my-5">
-  <h4 id="logout">Are you sure you want to log out?</h4>
-  <Button className="alert">Logout</Button>
+  <h4 class="subhead">Are you sure you want to log out?</h4>
+  <button type="button" class="btn btn-secondary btn-lg btn-block">Log Out</button>
 
 </section>
     );
