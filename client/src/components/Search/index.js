@@ -1,34 +1,18 @@
 import React from 'react';
-import { MDBCol } from "mdbreact";
-
-// function Search() {
-//     return (
-//         <section>
-//             <div class="input-group">
-//                 <div class="form-outline">
-//                     <input id="search-focus" type="search" id="form1" class="form-control" />
-//                     <label class="form-label" for="form1">Search</label>
-//                 </div>
-//                 <button type="button" class="btn btn-primary">
-//                     <i class="fas fa-search"></i>
-//                 </button>
-//             </div>
-//         </section>
-//     );
-
-// }
-
-// export default Search;
-
-
-
+import Container from 'react-bootstrap/Container';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Search = () => {
   return (
-    <MDBCol md="6">
-      <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
-    </MDBCol>
-  );
-}
+<section className="my-5">
+<h4 class="subhead" id="playlists">My Playlists</h4>
+  <Container>
+  <button type="button"  class="btn btn-secondary btn-lg btn-block">Explore Music</button>
+  </Container>
+  </section>
+);
+};
+
+
 
 export default Search;
