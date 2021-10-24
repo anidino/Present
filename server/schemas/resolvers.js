@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Photo, DashboardPhoto } = require("../models");
+const { User, Photo } = require("../models");
 
 const { signToken } = require("../utils/auth");
 
@@ -31,16 +31,16 @@ const resolvers = {
     },
     users: async (parent, args, context) => {
       //return all the users
-      return await User.find({});
+      return await User.find().select("-__v -password");
     },
     photos: async (parent, { imageLink }) => {
       //   const params = imageLink ? { imageLink } : {};
       return Photo.find().sort({ createdAt: -1 });
     },
-    dashboardPhoto: async (parent, { imageLink }) => {
-      //   const params = imageLink ? { imageLink } : {};
-      return DashboardPhoto.find().sort({ createdAt: -1 });
-    },
+    // dashboardPhoto: async (parent, { imageLink }) => {
+    //   //   const params = imageLink ? { imageLink } : {};
+    //   return DashboardPhoto.find().sort({ createdAt: -1 });
+    // },
   },
 
   Mutation: {

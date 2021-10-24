@@ -35,7 +35,6 @@ const typeDefs = gql`
     users: [User]
     photos: [Photo]
     user: User
-    dashboardPhoto: [DashboardPhoto]
   }
 
   type Mutation {
