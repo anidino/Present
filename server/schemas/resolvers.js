@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Photo, DashboardPhoto } = require("../models");
+const { User, Photo } = require("../models");
 
 const { signToken } = require("../utils/auth");
 
@@ -13,7 +13,13 @@ const resolvers = {
           // console
           //   .log(context.user._id)
           .select("-__v -password")
+          .populate("username")
+          .populate("email")
+          .populate("firstName")
+          .populate("lastName")
+          .populate("photoName")
           .populate("photos");
+
         //   .populate("dashboardPhoto");
         //   .populate('photos')
         //   .populate('playlist');
@@ -25,16 +31,16 @@ const resolvers = {
     },
     users: async (parent, args, context) => {
       //return all the users
-      return await User.find({});
+      return await User.find().select("-__v -password");
     },
     photos: async (parent, { imageLink }) => {
       //   const params = imageLink ? { imageLink } : {};
       return Photo.find().sort({ createdAt: -1 });
     },
-    dashboardPhoto: async (parent, { imageLink }) => {
-      //   const params = imageLink ? { imageLink } : {};
-      return DashboardPhoto.find().sort({ createdAt: -1 });
-    },
+    // dashboardPhoto: async (parent, { imageLink }) => {
+    //   //   const params = imageLink ? { imageLink } : {};
+    //   return DashboardPhoto.find().sort({ createdAt: -1 });
+    // },
   },
 
   Mutation: {
@@ -109,22 +115,23 @@ const resolvers = {
       //implement code to delete on cldnry
     },
 
-    addDashboardPhoto: async (parent, args, context) => {
-      console.log("LOOOK HERE **********", { ...context.user, ...args });
-      let updated_photo = [
-        context.user.dashboardPhoto,
-        { _id: args.dashboard_id },
-      ];
-      let result = await User.updateOne(
-        { _id: context.user._id },
-        { $push: { dashboardPhoto: args.dashboard_id } } //PUSHES dashboard_ID ATTRIBUTE ON PHOTO MODEL
-      );
-      console.log({ result });
-      return args.dashboard_id;
-    },
-    deleteDashboardPhoto: async (parent, args, context) => {
-      //delete the dashboard photo of authenticated user
-    },
+    // NO LONGER DOING DASHBOARD PHOTO ///
+    // addDashboardPhoto: async (parent, args, context) => {
+    //   console.log("LOOOK HERE **********", { ...context.user, ...args });
+    //   let updated_photo = [
+    //     context.user.dashboardPhoto,
+    //     { _id: args.dashboard_id },
+    //   ];
+    //   let result = await User.updateOne(
+    //     { _id: context.user._id },
+    //     { $push: { dashboardPhoto: args.dashboard_id } } //PUSHES dashboard_ID ATTRIBUTE ON PHOTO MODEL
+    //   );
+    //   console.log({ result });
+    //   return args.dashboard_id;
+    // },
+    // deleteDashboardPhoto: async (parent, args, context) => {
+    //   //delete the dashboard photo of authenticated user
+    // },
   },
 };
 

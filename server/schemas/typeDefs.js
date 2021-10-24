@@ -10,8 +10,7 @@ const typeDefs = gql`
     email: String
     firstName: String
     lastName: String
-    dashboardPhoto: [DashboardPhoto]
-    dob: String
+
     photos: [Photo]
   }
 
@@ -36,7 +35,6 @@ const typeDefs = gql`
     users: [User]
     photos: [Photo]
     user: User
-    dashboardPhoto: [DashboardPhoto]
   }
 
   type Mutation {
