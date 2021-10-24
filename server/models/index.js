@@ -1,6 +1,6 @@
 const User = require("./User");
-const SongReaction = require("./Playlist");
+// const PlaylistReaction = require("./PlaylistReaction");
 const Photo = require("./Photo");
-const DashboardPhoto = require("./DashboardPic");
+const Playlist = require("./Playlist");
 
-module.exports = { User, SongReaction, Photo, DashboardPhoto };
+module.exports = { User, Photo, Playlist };

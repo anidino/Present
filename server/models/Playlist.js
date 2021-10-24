@@ -1,18 +1,23 @@
 const { Schema, model } = require("mongoose");
-const songReactionSchema = require("./SongReaction");
 const dateFormat = require("../utils/dateFormat");
+const playlistReactionSchema = require("./PlaylistReaction");
 
-const songSchema = new Schema(
+
+const playlistSchema = new Schema(
   {
-    songUrl: {
+    playlistUrl: {
       type: String,
-      required: true,
+      // required: true,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
+    playlistName: {
+      type: String,
+      // required: true,
     },
+    // createdAt: {
+    //   type: Date,
+    //   default: Date.now,
+    //   get: (timestamp) => dateFormat(timestamp),
+    // },
     username: {
       type: String,
       ref: "User",
@@ -21,7 +26,7 @@ const songSchema = new Schema(
       type: String,
       ref: "User",
     },
-    reactions: [songReactionSchema],
+    reactions: [playlistReactionSchema],
   },
   {
     toJSON: {
@@ -30,10 +35,10 @@ const songSchema = new Schema(
   }
 );
 
-songSchema.virtual("songReaction").get(function () {
+playlistSchema.virtual("playlistReaction").get(function () {
   return this.reactions.length;
 });
 
-const Song = model("Song", songSchema);
+const Playlist = model("Playlist", playlistSchema);
 
-module.exports = Song;
+module.exports = Playlist;
