@@ -95,7 +95,7 @@ a:hover {
 }
 
 #text {
-  color: white;
+  color:var(--dark);
   font-family: 'Dancing Script';
   font-size: 2rem;
 }
@@ -122,4 +122,9 @@ a:hover {
   margin-left: 80%;
   font-family: 'Roboto', sans-serif;
   font-size: 1.3rem;
+  opacity: 0;
+}
+
+#quotes-box {
+  background-color: var(--secondary);
 }
