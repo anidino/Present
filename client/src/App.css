@@ -101,7 +101,7 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 #text {
@@ -142,14 +142,28 @@ a:hover {
   margin-top: 2rem;
 }
 
-#wave {
-  color: white;
-  font-size: 3rem;
-  font-family: 'Dancing Script';
-}
 
 .subhead {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--ter);
   font-size: 1.75rem;
+}
+
+.modal {
+  z-index: 9999;
+}
+
+.present {
+  color: whitesmoke;
+  font-family: 'Dancing Script';
+  font-size: 10rem;
+  text-align: center;
+}
+
+#logo-box {
+  margin-top: 3rem;
+}
+
+#time {
+  margin-top: 4rem;
+  text-align: center;
 }

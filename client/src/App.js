@@ -16,10 +16,16 @@ import './App.css';
 function App() {
   return (
     <div>
+      <div>
       <Nav></Nav>
-      <Time></Time>
+      </div>
+
+
+      <div>
       <Logo></Logo>
       <Quote></Quote>
+      <Time></Time>
+      </div>
     
       <main>
       <Search></Search>

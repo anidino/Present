@@ -1,11 +1,9 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 
 function Time() {
     return (
         <section>
-            <Button id="time"> Time and Date Here</Button>
-          
+           <h2 id="time">Time/Date Here</h2>
         </section>
 
     );

@@ -11,11 +11,12 @@ function Playlists() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+    
+      <Button variant="secondary" onClick={handleShow}>
+       Explore Music 
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal class="modal" show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
