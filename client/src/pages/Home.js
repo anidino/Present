@@ -1,14 +1,45 @@
 import React from "react";
-import Hero from "../components/Profile";
+import Profile from "../components/Profile";
+import Quote from "../components/Quote";
 import Nav from "../components/Nav";
-import Login from "../components/Time"
-
+import Gallery from "../components/Gallery";
+import Donate from "../components/Donate";
+import Logout from "../components/Logout";
+// import Login from "../components/Login";
+import Logo from '../components/Logo';
+import Playlists from "../components/Playlists";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
     <div className="container">
-      <Hero />
-      <Nav />
+      <div>
+        <Nav></Nav>
+      </div>
+
+      <div>
+        <Logo></Logo>
+      </div>
+
+      {/* <div>
+        <Login></Login>
+      </div> */}
+
+      <main>
+        <Playlists></Playlists>
+  
+        <Gallery></Gallery>
+        <Quote></Quote>
+        <Donate></Donate>
+        <Profile></Profile>
+        {/* <Login></Login> */}
+      </main>
+      <div>
+        <Logout></Logout>
+      </div>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };

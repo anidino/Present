@@ -1,14 +1,17 @@
 import React from 'react';
 import { Jumbotron } from 'reactstrap';
+import moment from 'moment';
  
+const day = moment().format("dddd");
+const date = moment().format("MMMM D, YYYY");
+
 const Logo = (props) => {
     return (
               <div id="logo-box">
                 <Jumbotron>
                   <h1 className="display-3" class="present" id="present"><span role="img" aria-label="music"> ♫</span>Present</h1>
-                  <p className="lead" class="jumbotext">Interaction made simple. See inspirational quotes, listen to your favorite music, and donate to a worthy cause.</p>
+                  <p className="lead" class="jumbotext">Today is {day} {date}. </p>
                   <hr className="my-2" />
-                  <p class="jumbotext">A simple web application that helps users struggling with memory loss and mental illness through the healing power of music.</p>
                 </Jumbotron>
               </div>
             );
