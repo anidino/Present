@@ -152,15 +152,17 @@ a:hover {
   z-index: 9999;
 }
 
+
+#logo-box {
+  margin-top: 7rem;
+  background-color: rgb(30, 48, 35, .3);
+}
+
 .present {
   color: whitesmoke;
   font-family: 'Dancing Script';
   font-size: 10rem;
   text-align: center;
-}
-
-#logo-box {
-  margin-top: 7rem;
 }
 
 #time {

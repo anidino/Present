@@ -1,14 +1,14 @@
 import React from 'react';
-import { Jumbotron, Button } from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
  
 const Logo = (props) => {
     return (
-              <div>
+              <div id="logo-box">
                 <Jumbotron>
-                  <h1 className="display-3" id="present"><span role="img" aria-label="music"> ♫</span>Present!</h1>
-                  <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+                  <h1 className="display-3" class="present" id="present"><span role="img" aria-label="music"> ♫</span>Present</h1>
+                  <p className="lead">Interaction made simple. See inspirational quotes, listen to your favorite music, and donate to a worthy cause.</p>
                   <hr className="my-2" />
-                  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                  <p>A simple web application that helps users struggling with memory loss and mental illness through the healing power of music.</p>
                 </Jumbotron>
               </div>
             );
