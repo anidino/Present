@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from "react-bootstrap/Button";
 
 function removeToken() {
   document.cookie='toekn=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
@@ -11,8 +10,8 @@ function Logout() {
   removeToken();
     return (
 <section className="my-5">
-  <h1 id="logout">Are you sure you want to logout?</h1>
-  <Button className="alert">Logout</Button>
+  <h4 class="subhead" id="logout">Are you sure you want to log out?</h4>
+  <button type="button" class="btn btn-secondary btn-lg btn-block">Log Out</button>
 
 </section>
     );

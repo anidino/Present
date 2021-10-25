@@ -1,7 +1,7 @@
 const { Schema } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const songReactionSchema = new Schema(
+const playlistReactionSchema = new Schema(
   {
     reactionBody: {
       type: String,
@@ -16,11 +16,11 @@ const songReactionSchema = new Schema(
       type: String,
       required: true,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => dateFormat(timestamp),
-    },
+    // createdAt: {
+    //   type: Date,
+    //   default: Date.now,
+    //   get: (timestamp) => dateFormat(timestamp),
+    // },
   },
   {
     toJSON: {
@@ -29,4 +29,4 @@ const songReactionSchema = new Schema(
   }
 );
 
-module.exports = songReactionSchema;
+module.exports = playlistReactionSchema;

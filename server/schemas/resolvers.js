@@ -1,5 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Photo, DashboardPhoto } = require("../models");
+const { User, Photo, PlaylistReaction } = require("../models");
+const Playlist = require("../models/Playlist");
 
 const { signToken } = require("../utils/auth");
 
@@ -13,10 +14,13 @@ const resolvers = {
           // console
           //   .log(context.user._id)
           .select("-__v -password")
-          .populate("photos");
-        //   .populate("dashboardPhoto");
-        //   .populate('photos')
-        //   .populate('playlist');
+          .populate("username")
+          .populate("email")
+          .populate("firstName")
+          .populate("lastName")
+          .populate("photoName")
+          .populate("photos")
+          .populate("playlists");
 
         return userData;
       }
@@ -25,15 +29,14 @@ const resolvers = {
     },
     users: async (parent, args, context) => {
       //return all the users
-      return await User.find({});
+      return await User.find().select("-__v -password");
     },
     photos: async (parent, { imageLink }) => {
       //   const params = imageLink ? { imageLink } : {};
       return Photo.find().sort({ createdAt: -1 });
     },
-    dashboardPhoto: async (parent, { imageLink }) => {
-      //   const params = imageLink ? { imageLink } : {};
-      return DashboardPhoto.find().sort({ createdAt: -1 });
+    playlists: async (parent, args) => {
+      return await Playlist.find({});
     },
   },
 
@@ -72,14 +75,10 @@ const resolvers = {
       );
       console.log({ result });
       return args.photo_id;
-      //receive photo from args
-      //save to cloudinary
-      //get id from cloudinary
-      //add id to userphotos
     },
     deletePhotos: async (parent, args, context) => {
       //take args._ids
-      //delete each photo from their collection /cloudinary if they uploaded their own and increase counter
+      //delete each photo from their collection
       const { _ids: ids_to_delete } = args;
       console.log({ args });
       try {
@@ -89,15 +88,12 @@ const resolvers = {
         let old_photos = user.photos.map((photo) => photo.toString());
         // console.log({ old_photos });
 
-        //give us back the photo if it is not part of what we are deleting
-        let new_photos = old_photos.filter((ph) => !ids_to_delete.includes(ph));
+        //gives back the photo if it is not part of what we are deleting
+        let new_photos = old_photos.filter((ph) => ids_to_delete.includes(ph));
         // console.log({ new_photos });
 
         // update the photos for the loged in user
-        const photos = await User.updateOne(
-          { _id: context.user._id },
-          { $set: { photos: new_photos } }
-        );
+        const photos = await User.updateOne({ _id: context.user._id }, { $set: { photos: new_photos } });
 
         //return the deleted_ids
         return ids_to_delete;
@@ -105,25 +101,34 @@ const resolvers = {
         // throw new Error("Delete operation failed");
         console.log(error);
       }
-      //add if cloudinary delete is required (if we are to have the upload your own photo)
-      //implement code to delete on cldnry
     },
+    addPlaylist: async (parent, args, context) => {
+      //link a playlist to a user
+      if (!args._ids.length) throw new Error("Playlist ID missing");
 
-    addDashboardPhoto: async (parent, args, context) => {
-      console.log("LOOOK HERE **********", { ...context.user, ...args });
-      let updated_photo = [
-        context.user.dashboardPhoto,
-        { _id: args.dashboard_id },
-      ];
-      let result = await User.updateOne(
-        { _id: context.user._id },
-        { $push: { dashboardPhoto: args.dashboard_id } } //PUSHES dashboard_ID ATTRIBUTE ON PHOTO MODEL
-      );
-      console.log({ result });
-      return args.dashboard_id;
+      // 1,2,2,3,4,5 =>set()=> 1,2,3,4,5
+      //spread operator ...
+      // p= ['a','b','horse']
+      //   c = [...p] ===> ...p === 'a','b','horse'
+      let query = { _id: context.user._id };
+      let old_playlist = (await User.findOne(query)).playlists;
+      let new_playlist = Array.from(new Set([...old_playlist, ...args._ids]).values());
+      //   console.log({ new_playlist, old_playlist });
+      return await User.updateOne(query, { $set: { playlists: new_playlist } }).then((res) => true);
     },
-    deleteDashboardPhoto: async (parent, args, context) => {
-      //delete the dashboard photo of authenticated user
+    //delete route is functional, no more issue with sandbox
+    deletePlaylist: async (parent, args, context) => {
+      if (!args._ids.length) throw new Error("Playlist ID missing");
+
+      let query = { _id: context.user._id };
+      let old_playlist = (await User.findOne(query)).playlists;
+
+      // filter so new playlist only has playlists with IDs that were not deleted
+      let new_playlist = old_playlist.filter((pl) => args._ids.includes(pl._id));
+      //   console.log({ new_playlist, old_playlist });
+      await User.updateOne(query, { $set: { playlists: new_playlist } });
+      return args._ids;
+      // returns id that is deleted
     },
   },
 };

@@ -9,9 +9,9 @@ function Navigate() {
 
   
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar id="nav" variant="light">
     <Container>
-    <Navbar.Brand href="#/"> <span role="img" aria-label="music"> ♫</span>Present</Navbar.Brand>
+    <Navbar.Brand href="#present"> <span role="img" aria-label="music"> ♫</span>Present</Navbar.Brand>
     <Nav className="me-auto">
       <Nav.Link href="#playlists">Playlists</Nav.Link>
       <Nav.Link href="#donate">Donate</Nav.Link>
@@ -20,6 +20,7 @@ function Navigate() {
     </Nav>
     </Container>
   </Navbar>
+
    
 
 
