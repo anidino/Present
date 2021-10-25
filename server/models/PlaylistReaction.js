@@ -5,17 +5,25 @@ const playlistReactionSchema = new Schema(
   {
     reactionBody: {
       type: String,
-      required: true,
+      // required: true,
       maxLength: 500,
     },
     title: {
       type: String,
-      required: true,
+      // required: true,
     },
     username: {
       type: String,
-      required: true,
+      // required: true,
     },
+    user_id: {
+      type: String,
+      ref: "User",
+    },
+    playlist_id: {
+      type: String,
+      ref: "Playlist"
+    }
     // createdAt: {
     //   type: Date,
     //   default: Date.now,

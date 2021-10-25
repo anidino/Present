@@ -10,21 +10,8 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     playlists: [Playlist]
-
+    playlistReactions: [PlaylistReaction]
     photos: [Photo]
-  }
-
-  type DashboardPhoto {
-    _id: ID
-    imageLink: String
-    username: String
-  }
-
-  type Playlist {
-    _id: ID
-    playlistUrl: String
-    playlistName: String
-    username: String
   }
 
   type Photo {
@@ -48,6 +35,7 @@ const typeDefs = gql`
     title: String
     reactionBody: String
     username: String
+    playlist_id: String
   }
 
   type Auth {
@@ -70,6 +58,9 @@ const typeDefs = gql`
     addPlaylist(_ids: [ID]!): Boolean
     addReaction(_ids: [ID]!, reactions: String): String
     deletePlaylist(_ids: [ID]!): [ID]
+    addPlaylistReaction(playlist_id: String!, title: String!, reactionBody: String!) : PlaylistReaction
+    deletePlaylistReaction(playlist_id: String!, reaction_id: String!): PlaylistReaction
+    updatePlaylistReaction(playlist_id: String!, reaction_id: String!, title: String, reactionBody: String): PlaylistReaction
   }
 `;
 
