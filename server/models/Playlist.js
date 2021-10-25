@@ -25,7 +25,11 @@ const playlistSchema = new Schema(
       type: String,
       ref: "User",
     },
-    reactions: [playlistReactionSchema],
+    reactions: {
+      type: String,
+      // required: true,
+      maxLength: 500,
+    },
   },
   {
     toJSON: {
