@@ -34,14 +34,13 @@ function App() {
 
       <div>
       <Logo></Logo>
-     
       <Time></Time>
+      <Quote></Quote>
       </div>
     
       <main>
       <Playlists></Playlists>
       <Gallery></Gallery>
-      <Quote></Quote>
       <Donate></Donate>
       <Profile></Profile>
     
