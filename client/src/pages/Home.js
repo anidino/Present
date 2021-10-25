@@ -1,13 +1,12 @@
 import React from "react";
 import Profile from "../components/Profile";
-import Time from "../components/Time";
 import Quote from "../components/Quote";
 import Nav from "../components/Nav";
 import Gallery from "../components/Gallery";
 import Donate from "../components/Donate";
 import Logout from "../components/Logout";
 // import Login from "../components/Login";
-// import Logo from '../components/Logo';
+import Logo from '../components/Logo';
 import Playlists from "../components/Playlists";
 import Footer from "../components/Footer";
 
@@ -19,7 +18,7 @@ const Home = () => {
       </div>
 
       <div>
-        <Time></Time>
+        <Logo></Logo>
       </div>
 
       {/* <div>
@@ -28,6 +27,7 @@ const Home = () => {
 
       <main>
         <Playlists></Playlists>
+  
         <Gallery></Gallery>
         <Quote></Quote>
         <Donate></Donate>
