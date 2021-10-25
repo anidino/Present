@@ -105,7 +105,7 @@ a:hover {
 }
 
 #text {
-  color:var(--primary);
+  color:var(--light);
   font-family: 'Dancing Script';
   font-size: 2rem;
 }
@@ -129,6 +129,10 @@ a:hover {
     font-size: 16px;  
 }
 
+.quote-button:hover {
+  opacity: .75;
+}
+
 #credit {
   color:var(--tertiary);
   margin-left: 80%;
@@ -138,8 +142,9 @@ a:hover {
 }
 
 #quotes-box {
-  background-color: var(--secondary);
+  background-color: rgb(30, 48, 35, .75);
   margin-top: 2rem;
+
 }
 
 
@@ -147,6 +152,7 @@ a:hover {
   font-family: 'Roboto', sans-serif;
   font-size: 1.75rem;
 }
+
 
 .modal {
   z-index: 9999;
@@ -172,4 +178,20 @@ a:hover {
 
 .jumbotext {
   text-align: center;
+}
+
+.foot {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.foot a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.foot a:hover {
+  text-decoration: underline;
+  font-weight: bold;
 }
