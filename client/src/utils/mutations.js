@@ -12,3 +12,9 @@ export const MUTATION_LOGIN = gql`
     }
   }
 `;
+
+// export const MUTATION_ADDPLAYLISTS = gql`
+//   mutation AddPlaylistMutation($ids: [ID]!) {
+//     addPlaylist(_ids: $ids)
+//   }
+// `;
