@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Profile from './components/Profile';
-import Time from './components/Time';
 import Quote from './components/Quote';
 import Nav from './components/Nav';
 import Gallery from './components/Gallery';
@@ -34,7 +33,6 @@ function App() {
 
       <div>
       <Logo></Logo>
-      <Time></Time>
       <Quote></Quote>
       </div>
     
