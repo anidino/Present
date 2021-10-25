@@ -30,13 +30,15 @@ function Quote(props) {
         <Container class="container-fluid">
             <Container id="quotes-box">
                 <Container id="text"> {quote} <div id="author">{author} </div>
-                    <Container id="author"><button class="quote-button" onClick={handleClick} id="new-quote">
-                        NEW QUOTE </button> </Container>
-                    <Container id="credit">
-                        {author}
-                    </Container>
                 </Container>
             </Container>
+            <Container id="author"><button class="quote-button-quote" onClick={handleClick} id="new-quote">
+                NEW QUOTE </button> </Container>
+            <Container id="credit">
+                {author}
+            </Container>
+
+
             <br></br>
         </Container>
 

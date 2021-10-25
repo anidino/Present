@@ -27,7 +27,7 @@ const typeDefs = gql`
     playlistUrl: String
     playlistName: String
     username: String
-    reactions: [PlaylistReaction]
+    reactions: String
   }
 
   type PlaylistReaction {
@@ -48,7 +48,6 @@ const typeDefs = gql`
     photos: [Photo]
     user: User
     playlists: [Playlist]
-    playlistreaction: [PlaylistReaction]
   }
 
   type Mutation {
@@ -57,6 +56,7 @@ const typeDefs = gql`
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
     addPlaylist(_ids: [ID]!): Boolean
+    addReaction(_ids: [ID]!, reactions: String): String
     deletePlaylist(_ids: [ID]!): [ID]
     addPlaylistReaction(playlist_id: String!, title: String!, reactionBody: String!) : PlaylistReaction
     deletePlaylistReaction(playlist_id: String!, reaction_id: String!): PlaylistReaction
