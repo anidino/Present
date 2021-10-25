@@ -41,6 +41,7 @@ const typeDefs = gql`
     title: String
     reactionBody: String
     username: String
+    user_id: ID
   }
 
   type Auth {
@@ -62,6 +63,7 @@ const typeDefs = gql`
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
     addPlaylist(playlistUrl: String!, playlistName: String!) : Playlist
+    addPlaylistReaction(_id: ID!): PlaylistReaction
   }
 `;
 

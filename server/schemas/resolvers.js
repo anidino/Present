@@ -118,6 +118,11 @@ const resolvers = {
     addPlaylist: async (parent, args, context) => {
       return Playlist.create(args);
     },
+    addPlaylistReaction: async (parent, args, context) => {
+      let user = await User.findOne({ _id: context.user._id });
+
+      
+    }
   },
 };
 
