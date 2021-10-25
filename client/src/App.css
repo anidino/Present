@@ -155,7 +155,7 @@ a:hover {
 
 #logo-box {
   margin-top: 7rem;
-  background-color: rgb(30, 48, 35, .3);
+  background-color: rgb(30, 48, 35, .6);
 }
 
 .present {
@@ -167,5 +167,9 @@ a:hover {
 
 #time {
   margin-top: 4rem;
+  text-align: center;
+}
+
+.jumbotext {
   text-align: center;
 }
