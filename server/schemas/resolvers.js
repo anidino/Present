@@ -86,7 +86,7 @@ const resolvers = {
     },
     deletePhotos: async (parent, args, context) => {
       //take args._ids
-      //delete each photo from their collection /cloudinary if they uploaded their own and increase counter
+      //delete each photo from their collection
       const { _ids: ids_to_delete } = args;
       console.log({ args });
       try {
@@ -96,8 +96,8 @@ const resolvers = {
         let old_photos = user.photos.map((photo) => photo.toString());
         // console.log({ old_photos });
 
-        //give us back the photo if it is not part of what we are deleting
-        let new_photos = old_photos.filter((ph) => !ids_to_delete.includes(ph));
+        //gives back the photo if it is not part of what we are deleting
+        let new_photos = old_photos.filter((ph) => ids_to_delete.includes(ph));
         // console.log({ new_photos });
 
         // update the photos for the loged in user
@@ -109,24 +109,32 @@ const resolvers = {
         // throw new Error("Delete operation failed");
         console.log(error);
       }
-      //add if cloudinary delete is required (if we are to have the upload your own photo)
-      //implement code to delete on cldnry
     },
     addPlaylist: async (parent, args, context) => {
-      //   return Playlist.create(args); adds new item to playlist collection
       //link a playlist to a user
-      if (!args._ids.length) throw new Error("Playlist id missing");
+      if (!args._ids.length) throw new Error("Playlist ID missing");
 
       // 1,2,2,3,4,5 =>set()=> 1,2,3,4,5
       //spread operator ...
       // p= ['a','b','horse']
       //   c = [...p] ===> ...p === 'a','b','horse'
-      //continue
       let query = { _id: context.user._id };
       let old_playlist = (await User.findOne(query)).playlists;
       let new_playlist = Array.from(new Set([...old_playlist, ...args._ids]).values());
       //   console.log({ new_playlist, old_playlist });
       return await User.updateOne(query, { $set: { playlists: new_playlist } }).then((res) => true);
+    },
+    deletePlaylist: async (parent, args, context) => {
+      if (!args._ids.length) throw new Error("Playlist ID missing");
+
+      let query = { _id: context.user._id };
+      let old_playlist = (await User.findOne(query)).playlists;
+
+      // filter so new playlist only has playlists with IDs that were not deleted
+      let new_playlist = old_playlist.filter((pl) => args._ids.includes(pl._id));
+      //   console.log({ new_playlist, old_playlist });
+      await User.updateOne(query, { $set: { playlists: new_playlist } });
+      return args._ids;
     },
   },
 };
