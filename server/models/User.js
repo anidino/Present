@@ -6,7 +6,7 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: true,
+      //   required: true,
       unique: true,
       trim: true,
     },
@@ -51,12 +51,13 @@ const userSchema = new Schema(
         ref: "Photo",
       },
     ],
-    // songs: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Song",
-    //   },
-    // ],
+    playlists: [
+      {
+        // type: Schema.Types.ObjectId,
+        ref: "Playlist",
+        type: String,
+      },
+    ],
   },
   {
     toJSON: {

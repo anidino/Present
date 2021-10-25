@@ -29,5 +29,4 @@ const playlistReactionSchema = new Schema(
   }
 );
 
-
 module.exports = playlistReactionSchema;
