@@ -68,6 +68,7 @@ const typeDefs = gql`
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
     addPlaylist(_ids: [ID]!): Boolean
+    addReaction(_ids: [ID]!, reactions: String): String
     deletePlaylist(_ids: [ID]!): [ID]
   }
 `;

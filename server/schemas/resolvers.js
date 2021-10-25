@@ -116,6 +116,14 @@ const resolvers = {
       //   console.log({ new_playlist, old_playlist });
       return await User.updateOne(query, { $set: { playlists: new_playlist } }).then((res) => true);
     },
+    addReaction: async (parent, args, context) => {
+      let query = { _ids: context.user._ids };
+      let currentPlaylistId = (await User.findOne(query)).playlists[0];
+
+      await Playlist.findByIdAndUpdate({ _id: currentPlaylistId }, { $push: { reactions: "test reaction" } }, { new: true });
+
+      return "reaction successfully added";
+    },
     //delete route is functional, no more issue with sandbox
     deletePlaylist: async (parent, args, context) => {
       if (!args._ids.length) throw new Error("Playlist ID missing");
