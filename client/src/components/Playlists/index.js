@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
-import cat from '../../assets/city.jpg';
+import cat from '../../assets/cat.jpg';
 import orange from '../../assets/orange.jpg';
 import wave from '../../assets/sea.jpg';
 
@@ -36,6 +36,9 @@ function Playlists() {
     <Carousel.Caption>
       <h3>Playlist Name</h3>
       <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+      </div>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
