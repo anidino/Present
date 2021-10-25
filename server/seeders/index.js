@@ -1,6 +1,8 @@
 const seedPhotos = require("./photoSeeds");
 const seedSongs = require("./songSeeds");
 const userSeeds = require("./userSeeds");
+const playlistSeeds =require('./playlistSeeds');
+
 
 // const sequelize = require("../config/connection");
 

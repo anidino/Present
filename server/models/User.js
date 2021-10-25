@@ -6,7 +6,7 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: true,
+      //   required: true,
       unique: true,
       trim: true,
     },
@@ -40,23 +40,24 @@ const userSchema = new Schema(
     photoName: {
       type: String,
     },
-    dashboardPhoto: {
-      //   type: Schema.Types.ObjectId,
-      ref: "DashboardPhoto",
-      type: String,
-    },
+    // dashboardPhoto: {
+    //   //   type: Schema.Types.ObjectId,
+    //   //   ref: "Photo",
+    //   type: String,
+    // },
     photos: [
       {
         type: Schema.Types.ObjectId,
         ref: "Photo",
       },
     ],
-    // songs: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Song",
-    //   },
-    // ],
+    playlists: [
+      {
+        // type: Schema.Types.ObjectId,
+        ref: "Playlist",
+        type: String,
+      },
+    ],
   },
   {
     toJSON: {
@@ -80,9 +81,9 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual("songCount").get(function () {
-  return this.songs.length;
-});
+// userSchema.virtual("songCount").get(function () {
+//   return this.songs.length;
+// });
 
 const User = model("User", userSchema);
 

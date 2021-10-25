@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Profile from './components/Profile';
 import Time from './components/Time';
@@ -13,11 +14,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 
+// const httpLink = createHttpLink({
+//   uri: "http://localhost:3001/graphql",
+// });
+
+// const client = new ApolloClient({
+//   link: httpLink,
+//   cache: new InMemoryCache(),
+// });
+
 function App() {
   return (
     <div>
       <div>
       <Nav></Nav>
+
       </div>
 
 
@@ -34,6 +45,7 @@ function App() {
       <Donate></Donate>
       <Profile></Profile>
     
+
       </main>
       <div>
         <Logout></Logout>
