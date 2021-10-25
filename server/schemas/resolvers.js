@@ -188,11 +188,6 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    addPlaylistReaction: async (parent, args, context) => {
-      let user = await User.findOne({ _id: context.user._id });
-
-      
-    }
   },
 };
 
