@@ -20,6 +20,10 @@ const playlistReactionSchema = new Schema(
       type: String,
       ref: "User",
     },
+    playlist_id: {
+      type: String,
+      ref: "Playlist"
+    }
     // createdAt: {
     //   type: Date,
     //   default: Date.now,
@@ -32,6 +36,5 @@ const playlistReactionSchema = new Schema(
     },
   }
 );
-
 
 module.exports = playlistReactionSchema;

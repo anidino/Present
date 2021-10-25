@@ -3,21 +3,15 @@ const { gql } = require("apollo-server-express");
 
 // create our typeDefs
 const typeDefs = gql`
-
   type User {
     _id: ID
     username: String
     email: String
     firstName: String
     lastName: String
-
+    playlists: [Playlist]
+    playlistReactions: [PlaylistReaction]
     photos: [Photo]
-  }
-
-  type DashboardPhoto {
-    _id: ID
-    imageLink: String
-    username: String
   }
 
   type Photo {
@@ -41,7 +35,7 @@ const typeDefs = gql`
     title: String
     reactionBody: String
     username: String
-    user_id: ID
+    playlist_id: String
   }
 
   type Auth {
@@ -62,19 +56,13 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): User
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
-    addPlaylist(playlistUrl: String!, playlistName: String!) : Playlist
-    addPlaylistReaction(_id: ID!): PlaylistReaction
+    addPlaylist(_ids: [ID]!): Boolean
+    deletePlaylist(_ids: [ID]!): [ID]
+    addPlaylistReaction(playlist_id: String!, title: String!, reactionBody: String!) : PlaylistReaction
+    deletePlaylistReaction(playlist_id: String!, reaction_id: String!): PlaylistReaction
+    updatePlaylistReaction(playlist_id: String!, reaction_id: String!, title: String, reactionBody: String): PlaylistReaction
   }
 `;
 
 // export the typeDefs
 module.exports = typeDefs;
-
-
-
-
-
-
-
-
-
