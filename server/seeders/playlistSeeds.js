@@ -16,64 +16,114 @@ jazzPlaylist.save().then(
   (err) => console.log(err)
 );
 
-// const jazzPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9598835682",
-//   playlistName: "Jazz",
-// });
+const classicalPlaylist = new Playlist({
+  playlistUrl: "https://www.deezer.com/us/playlist/9599690682",
+  playlistName: "Classical",
 
-// jazzPlaylist.save().then(() => console.log("Seeded Jazz Playlist"));
+  function(req, res) {
+    console.log(res);
+  },
+});
 
-// const classicalPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9599690682",
-//   playlistName: "Classical",
-// });
+classicalPlaylist.save().then(
+  () => console.log("SEEDED Classical"),
+  (err) => console.log(err)
+);
 
-// classicalPlaylist.save().then(() => console.log("Seeded Classical Playlist"));
+const hipHopPlaylist = new Playlist({
+  playlistUrl: "https://www.deezer.com/us/playlist/9599718542",
+  playlistName: "Hip-Hop",
 
-// const countryPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9599733422",
-//   playlistName: "Country",
-// });
+  function(req, res) {
+    console.log(res);
+  },
+});
 
-// countryPlaylist.save().then(() => console.log("Seeded Country Playlist"));
+hipHopPlaylist.save().then(
+  () => console.log("SEEDED Hip-Hop"),
+  (err) => console.log(err)
+);
 
-// const hiphopPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9599718542",
-//   playlistName: "Hip-Hop",
-// });
+const metalPlaylist = new Playlist({
+  playlistUrl: "https://www.deezer.com/us/playlist/9599709382",
+  playlistName: "Metal",
 
-// hiphopPlaylist.save().then(() => console.log("Seeded Hip-hop Playlist"));
+  function(req, res) {
+    console.log(res);
+  },
+});
 
-// const mariachiPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9599669022",
-//   playlistName: "Mariachi",
-// });
+metalPlaylist.save().then(
+  () => console.log("SEEDED Metal"),
+  (err) => console.log(err)
+);
 
-// mariachiPlaylist.save().then(() => console.log("Seeded Mariachi Playlist"));
+const rnbPlaylist = new Playlist({
+  playlistUrl: "https://www.deezer.com/us/playlist/9599616842",
+  playlistName: "R&B",
 
-// const metalPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9599709382",
-//   playlistName: "Metal",
-// });
+  function(req, res) {
+    console.log(res);
+  },
+});
 
-// metalPlaylist.save().then(() => console.log("Seeded Metal Playlist"));
+rnbPlaylist.save().then(
+  () => console.log("SEEDED R&B"),
+  (err) => console.log(err)
+);
 
-// const operaPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9599678442",
-//   playlistName: "Opera",
-// });
+const mariachiPlaylist = new Playlist({
+  playlistUrl: "https://www.deezer.com/us/playlist/9599669022",
+  playlistName: "R&B",
 
-// operaPlaylist.save().then(() => console.log("Seeded Opera Playlist"));
+  function(req, res) {
+    console.log(res);
+  },
+});
 
-// const rnbPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9599616842",
-//   playlistName: "R n B",
-// });
+mariachiPlaylist.save().then(
+  () => console.log("SEEDED Mariachi"),
+  (err) => console.log(err)
+);
 
-// rnbPlaylist.save().then(() => console.log("Seeded RnB Playlist"));
+const operaPlaylist = new Playlist({
+  playlistUrl: "https://www.deezer.com/us/playlist/9599678442",
+  playlistName: "Opera",
 
-// const rockPlaylist = new Playlist({
-//   playlistUrl: "https://www.deezer.com/us/playlist/9599631022",
-//   playlistName: "Rock",
-// });
-// rockPlaylist.save().then(() => console.log("Seeded Rock Playlist"));
+  function(req, res) {
+    console.log(res);
+  },
+});
+
+operaPlaylist.save().then(
+  () => console.log("SEEDED Opera"),
+  (err) => console.log(err)
+);
+
+const rockPlaylist = new Playlist({
+  playlistUrl: "https://www.deezer.com/us/playlist/9599631022",
+  playlistName: "Opera",
+
+  function(req, res) {
+    console.log(res);
+  },
+});
+
+rockPlaylist.save().then(
+  () => console.log("SEEDED Rock"),
+  (err) => console.log(err)
+);
+
+const countryPlaylist = new Playlist({
+  playlistUrl: "https://www.deezer.com/us/playlist/9599733422",
+  playlistName: "Opera",
+
+  function(req, res) {
+    console.log(res);
+  },
+});
+
+countryPlaylist.save().then(
+  () => console.log("SEEDED Country"),
+  (err) => console.log(err)
+);
