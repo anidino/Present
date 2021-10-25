@@ -29,7 +29,14 @@ const resolvers = {
     },
     users: async (parent, args, context) => {
       //return all the users
-      return await User.find().select("-__v -password");
+      return await User.find().select("-__v -password")
+      .populate("username")
+      .populate("email")
+      .populate("firstName")
+      .populate("lastName")
+      .populate("photoName")
+      .populate("photos")
+      .populate("playlists");
     },
     photos: async (parent, { imageLink }) => {
       //   const params = imageLink ? { imageLink } : {};
@@ -129,6 +136,57 @@ const resolvers = {
       await User.updateOne(query, { $set: { playlists: new_playlist } });
       return args._ids;
       // returns id that is deleted
+    },
+    addPlaylistReaction: async (parent, { playlist_id, title, reactionBody }, context) => {
+    
+      if(context.user) {
+
+        let username = context.user.username;
+
+        const updatedPlaylist = await Playlist.findOneAndUpdate({ _id: playlist_id},
+          { $push: { reactions: { username, title, reactionBody } } },
+          { new: true, runValidators: true }
+        );
+
+        return updatedPlaylist;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    deletePlaylistReaction: async (parent, { playlist_id, reaction_id }, context) => {
+
+      if(context.user) {
+        const updatedPlaylist = await Playlist.findOneAndUpdate({ _id: playlist_id },
+          {$pull: { reactions: {_id: reaction_id } } },
+          { new: true, runValidators: true }
+        );
+
+        return updatedPlaylist;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    updatePlaylistReaction: async (parent, { playlist_id, reaction_id, title, reactionBody }, context) => {
+      if(context.user) {
+
+        let username = context.user.username;
+
+
+        // removes the old reactions from the array 
+        const deleteOldReaction = await Playlist.findOneAndUpdate({ _id: playlist_id },
+          {$pull: { reactions: { _id: reaction_id } } },
+          { new: true, runValidators: true }
+        );
+      
+        const pushUpdatedReaction = await Playlist.findOneAndUpdate({ _id: playlist_id },
+          {$push: { reactions: { username, title, reactionBody } } },
+          { new: true, runValidators: true }
+        );
+
+        return pushUpdatedReaction;
+      }
+
+      throw new AuthenticationError('You need to be logged in!');
     },
   },
 };
