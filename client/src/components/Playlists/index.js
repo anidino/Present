@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Carousel from 'react-bootstrap/Carousel';
-import cat from '../../assets/cat.jpg';
+import cat from '../../assets/city.jpg';
 import orange from '../../assets/orange.jpg';
 import wave from '../../assets/sea.jpg';
 
