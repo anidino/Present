@@ -22,10 +22,6 @@ const resolvers = {
           .populate("photos")
           .populate("playlists");
 
-        //   .populate("dashboardPhoto");
-        //   .populate('photos')
-        //   .populate('playlist');
-
         return userData;
       }
 
@@ -79,10 +75,6 @@ const resolvers = {
       );
       console.log({ result });
       return args.photo_id;
-      //receive photo from args
-      //save to cloudinary
-      //get id from cloudinary
-      //add id to userphotos
     },
     deletePhotos: async (parent, args, context) => {
       //take args._ids
