@@ -1,11 +1,10 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Photo, PlaylistReaction,  } = require("../models");
+const { User, Photo, PlaylistReaction } = require("../models");
 const Playlist = require("../models/Playlist");
 
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
-
   Query: {
     user: async (parent, args, context) => {
       //context is the req object which is updated in the auth middleware
@@ -20,7 +19,8 @@ const resolvers = {
           .populate("firstName")
           .populate("lastName")
           .populate("photoName")
-          .populate("photos");
+          .populate("photos")
+          .populate("playlists");
 
         //   .populate("dashboardPhoto");
         //   .populate('photos')
@@ -39,9 +39,9 @@ const resolvers = {
       //   const params = imageLink ? { imageLink } : {};
       return Photo.find().sort({ createdAt: -1 });
     },
-    playlists: async(parent, args) => {
+    playlists: async (parent, args) => {
       return await Playlist.find({});
-    }
+    },
   },
 
   Mutation: {
@@ -101,10 +101,7 @@ const resolvers = {
         // console.log({ new_photos });
 
         // update the photos for the loged in user
-        const photos = await User.updateOne(
-          { _id: context.user._id },
-          { $set: { photos: new_photos } }
-        );
+        const photos = await User.updateOne({ _id: context.user._id }, { $set: { photos: new_photos } });
 
         //return the deleted_ids
         return ids_to_delete;
@@ -116,7 +113,20 @@ const resolvers = {
       //implement code to delete on cldnry
     },
     addPlaylist: async (parent, args, context) => {
-      return Playlist.create(args);
+      //   return Playlist.create(args); adds new item to playlist collection
+      //link a playlist to a user
+      if (!args._ids.length) throw new Error("Playlist id missing");
+
+      // 1,2,2,3,4,5 =>set()=> 1,2,3,4,5
+      //spread operator ...
+      // p= ['a','b','horse']
+      //   c = [...p] ===> ...p === 'a','b','horse'
+      //continue
+      let query = { _id: context.user._id };
+      let old_playlist = (await User.findOne(query)).playlists;
+      let new_playlist = Array.from(new Set([...old_playlist, ...args._ids]).values());
+      //   console.log({ new_playlist, old_playlist });
+      return await User.updateOne(query, { $set: { playlists: new_playlist } }).then((res) => true);
     },
   },
 };

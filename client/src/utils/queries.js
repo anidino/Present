@@ -1,19 +1,12 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_THOUGHTS = gql`
-  query thoughts($username: String) {
-    thoughts(username: $username) {
+export const QUERY_PLAYLISTS = gql`
+  query QueryPlist {
+    playlists {
       _id
-      thoughtText
-      createdAt
+      playlistName
+      playlistUrl
       username
-      reactionCount
-      reactions {
-        _id
-        createdAt
-        username
-        reactionBody
-      }
     }
   }
 `;

@@ -7,26 +7,26 @@ import Search from "./components/Search";
 import Gallery from "./components/Gallery";
 import Donate from "./components/Donate";
 import Logout from "./components/Logout";
-import Logo from "./components/Logo";
+// import Logo from "./components/Logo";
 import Playlists from "./components/Playlists";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
-});
+// const httpLink = createHttpLink({
+//   uri: "http://localhost:3001/graphql",
+// });
 
-const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache(),
-});
+// const client = new ApolloClient({
+//   link: httpLink,
+//   cache: new InMemoryCache(),
+// });
 
 function App() {
   return (
     <div>
       <Nav></Nav>
       <Time></Time>
-      <Logo></Logo>
+      {/* <Logo></Logo> */}
       <Quote></Quote>
 
       <main>
