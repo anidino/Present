@@ -178,6 +178,7 @@ const resolvers = {
           { new: true, runValidators: true }
         );
       
+        // creates a new reaction and pushes it into the array in place of the old one 
         const pushUpdatedReaction = await Playlist.findOneAndUpdate({ _id: playlist_id },
           {$push: { reactions: { username, title, reactionBody } } },
           { new: true, runValidators: true }
