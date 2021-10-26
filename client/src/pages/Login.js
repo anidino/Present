@@ -6,8 +6,7 @@ import Auth from "../utils/auth";
 import "../login.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import dancer from '../assets/sign-up-2.jpg';
-
+import dancer from "../assets/sign-up-2.jpg";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -36,21 +35,30 @@ function Login(props) {
     <div class="container-sm" id="login-box">
       <Row>
         <Col class="image-box">
-        <img class="dancer" src= {dancer}></img>
-    </Col>
+          <img class="dancer" src={dancer}></img>
+        </Col>
         <Col>
           <div class="words-box">
             <br></br>
-            <h2 class="login"><span role="img" aria-label="music"> ♫</span>Present</h2>
+            <h2 class="login">
+              <span role="img" aria-label="music">
+                {" "}
+                ♫
+              </span>
+              Present
+            </h2>
             <form onSubmit={handleFormSubmit}>
               <div className="mb-3">
-
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" onChange={handleChange} />
+                <label for="email" class="form-label">
+                  Email address
+                </label>
+                <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" onChange={handleChange} />
               </div>
               <div className="mb-3">
-                <label for="pwd" class="form-label">Password</label>
-                <input type="password" class="form-control" type="password" id="pwd" onChange={handleChange} />
+                <label for="pwd" class="form-label">
+                  Password
+                </label>
+                <input type="password" name="password" class="form-control" type="password" id="pwd" onChange={handleChange} />
               </div>
 
               {error ? (
@@ -59,16 +67,27 @@ function Login(props) {
                 </div>
               ) : null}
               <div className="flex-row flex-end">
-                <button type="submit" class="quote-button">LOGIN</button>
+                <button type="submit" class="quote-button">
+                  LOGIN
+                </button>
               </div>
             </form>
-            <Link to="/signup" class="signup-link"> or create an account</Link> <br></br>
-            <Link to="/" class="signup-link"><span role="img" aria-label="music"> ♫</span> Home</Link>
+            <Link to="/signup" class="signup-link">
+              {" "}
+              or create an account
+            </Link>{" "}
+            <br></br>
+            <Link to="/" class="signup-link">
+              <span role="img" aria-label="music">
+                {" "}
+                ♫
+              </span>{" "}
+              Home
+            </Link>
           </div>
         </Col>
       </Row>
     </div>
-
   );
 }
 
