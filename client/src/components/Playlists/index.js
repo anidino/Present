@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import Carousel from 'react-bootstrap/Carousel';
-import cat from '../../assets/cat.jpg';
-import orange from '../../assets/city.jpg';
-import wave from '../../assets/sea.jpg';
-import leaves from '../../assets/mountain.jpg';
-import pray from '../../assets/pray.jpg';
-import travel from '../../assets/travel.jpg';
-import  { QUERY_PLAYLISTS }  from '../../utils/queries';
-import { useQuery } from '@apollo/client';
-
-
-
-
+import React, { useState } from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import Carousel from "react-bootstrap/Carousel";
+import cat from "../../assets/cat.jpg";
+import orange from "../../assets/city.jpg";
+import wave from "../../assets/sea.jpg";
+import leaves from "../../assets/mountain.jpg";
+import pray from "../../assets/pray.jpg";
+import travel from "../../assets/travel.jpg";
+import { QUERY_PLAYLISTS } from "../../utils/queries";
+import { useQuery } from "@apollo/client";
 
 function Playlists() {
   const [show, setShow] = useState(false);
@@ -21,12 +17,12 @@ function Playlists() {
   const handleShow = () => setShow(true);
 
 
-  const queryPlayists = useQuery(QUERY_PLAYLISTS);
-  //const playlistInfo = queryPlaylists.data.playlists;
+  const { loading, error, data } = useQuery(QUERY_PLAYLISTS, {
+    fetchPolicy: "cache-and-network"
+  });
 
-  
-
-  // console.log(playlistInfo);
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
 
 
   const playlistPieceArray = [];
@@ -34,17 +30,17 @@ function Playlists() {
   const srcUrlArray = [];
 
 
-  // for (let i = 0; i < playlistInfo.length; i++) {
+  for (let i = 0; i < data.playlists.length; i++) {
 
-  //   var playlistPiece = queryPlaylists.data.playlists[i].playlistUrl.split("us");
+    let playlistPiece = data.playlists[i].playlistUrl.split("us");
 
-  //   playlistPieceArray.push(playlistPiece[1]);
+    playlistPieceArray.push(playlistPiece[1]);
 
     // console.log(playlistPiece[1]);
 
-  // }
+  }
 
-  // console.log(playlistPieceArray[0]);
+  // console.log(playlistPieceArray);
 
   for (let i = 0; i < playlistPieceArray.length; i++) {
 
@@ -57,15 +53,17 @@ function Playlists() {
     srcUrlArray.push(combinedUrl);
   }
 
-  console.log(srcUrlArray);
+  // console.log(srcUrlArray);
 
   return (
     <>
       <section className="my-5">
-        <h4 class="subhead" id="playlists">My Playlists</h4>
+        <h4 class="subhead" id="playlists">
+          My Playlists
+        </h4>
         <Button variant="secondary" onClick={handleShow}>
           Explore Music
-      </Button>
+        </Button>
 
         <Modal class="modal" show={show} onHide={handleClose}>
           <Modal.Header closeButton>
@@ -83,7 +81,7 @@ function Playlists() {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/*\ <h3>{queryPlaylists.data.playlists[0].playlistName}</h3> */}
+      <h3>{data.playlists[0].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[0]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -98,7 +96,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/* <h3>{queryPlaylists.data.playlists[1].playlistName}</h3> */}
+      <h3>{data.playlists[1].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[1]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -113,7 +111,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/* <h3>{queryPlaylists.data.playlists[2].playlistName}</h3> */}
+      <h3>{data.playlists[2].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[2]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -127,7 +125,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/* <h3>{queryPlaylists.data.playlists[3].playlistName}</h3> */}
+      <h3>{data.playlists[3].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[3]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -142,7 +140,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/* <h3>{queryPlaylists.data.playlists[4].playlistName}</h3> */}
+      <h3>{data.playlists[4].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[4]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -157,7 +155,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/* <h3>{queryPlaylists.data.playlists[5].playlistName}</h3> */}
+      <h3>{data.playlists[5].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[5]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
     </Carousel.Item>
@@ -172,7 +170,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/* <h3>{queryPlaylists.data.playlists[6].playlistName}</h3> */}
+      <h3>{data.playlists[6].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[6]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
     </Carousel.Item>
@@ -187,7 +185,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/* <h3>{queryPlaylists.data.playlists[7].playlistName}</h3> */}
+      <h3>{data.playlists[7].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[7]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
     </Carousel.Item>
@@ -202,7 +200,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      {/* <h3>{queryPlaylists.data.playlists[8].playlistName}</h3> */}
+      <h3>{data.playlists[8].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[8]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
     </Carousel.Item>
@@ -210,17 +208,15 @@ function Playlists() {
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
-          </Button>
+            </Button>
             <Button class="quote-button" onClick={handleClose}>
               Save Changes
-          </Button>
+            </Button>
           </Modal.Footer>
         </Modal>
       </section>
     </>
   );
 }
-
-
 
 export default Playlists;

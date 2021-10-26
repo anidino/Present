@@ -52,13 +52,15 @@ const typeDefs = gql`
 
   type Mutation {
     login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!, firstName: String!, lastName: String!): User
+
+    addUser(username: String!, email: String!, password: String!, lastName: String!, firstName: String!): Auth!
+
     addPhoto(photo_id: ID!): String!
     deletePhotos(_ids: [ID]!): [String]
     addPlaylist(_ids: [ID]!): Boolean
     addReaction(_ids: [ID]!, reactions: String): String
     deletePlaylist(_ids: [ID]!): [ID]
-    addPlaylistReaction(playlist_id: String!, title: String!, reactionBody: String!) : PlaylistReaction
+    addPlaylistReaction(playlist_id: String!, title: String!, reactionBody: String!): PlaylistReaction
     deletePlaylistReaction(playlist_id: String!, reaction_id: String!): PlaylistReaction
     updatePlaylistReaction(playlist_id: String!, reaction_id: String!, title: String, reactionBody: String): PlaylistReaction
   }
