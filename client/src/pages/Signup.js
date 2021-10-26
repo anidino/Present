@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
+import "../login.css";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import dancer from '../assets/sign-up-2.jpg';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [formState, setFormState] = useState({ name:"", email: "", password: "" });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -31,32 +35,44 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
+ 
+<div class="container-sm" id="signup-box">
+      <Row>
+        <Col class="image-box">
+        <img class="dancer" id="login-image" src= {dancer}></img>
+    </Col>
+        <Col>
+          <div class="words-box">
+            <br></br>
+            <h2 class="login"><span role="img" aria-label="music"> ♫</span>Present</h2>
+            <form onSubmit={handleFormSubmit}>
+            <div className="mb-3">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="name" class="form-control" id="name" aria-describedby="name" onChange={handleChange} />
+              </div>
+              <div className="mb-3">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="name" class="form-control" id="name" aria-describedby="name" onChange={handleChange} />
+              </div>
+              <div className="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" onChange={handleChange} />
+              </div>
+              <div className="mb-3">
+                <label for="pwd" class="form-label">Password</label>
+                <input type="password" class="form-control" type="password" id="pwd" onChange={handleChange} />
+              </div>
 
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
-          <input placeholder="First" name="firstName" type="firstName" id="firstName" onChange={handleChange} />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
-          <input placeholder="Last" name="lastName" type="lastName" id="lastName" onChange={handleChange} />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input placeholder="youremail@test.com" name="email" type="email" id="email" onChange={handleChange} />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input placeholder="******" name="password" type="password" id="pwd" onChange={handleChange} />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+              <div className="flex-row flex-end">
+                <button type="submit" class="quote-button">SIGNUP</button>
+              </div>
+            </form>
+            <Link to="/login" class="signup-link"> or login</Link>
+          </div>
+        </Col>
+      </Row>
     </div>
+
   );
 }
 
