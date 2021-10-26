@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-// import Signup from "./pages/Signup";
+import Signup from "./pages/Signup";
 
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
     <div>
 
       <Switch>
-        {/* <Route path="/signup" component={Signup} /> */}
         <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <Route path="/" component={Home} />
       </Switch>
 
