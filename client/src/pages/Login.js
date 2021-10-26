@@ -63,7 +63,7 @@ function Login(props) {
               </div>
             </form>
             <Link to="/signup" class="signup-link"> or create an account</Link> <br></br>
-            <Link to="/home" class="signup-link"><span role="img" aria-label="music"> ♫</span> Home</Link>
+            <Link to="/" class="signup-link"><span role="img" aria-label="music"> ♫</span> Home</Link>
           </div>
         </Col>
       </Row>

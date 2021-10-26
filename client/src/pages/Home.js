@@ -8,7 +8,8 @@ import Logout from "../components/Logout";
 import Logo from '../components/Logo';
 import Playlists from "../components/Playlists";
 import Footer from "../components/Footer";
-import '../App.css';
+import PopUp from "../components/Alert";
+import "../../src/App.css";
 
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
 
       <div>
         <Logo></Logo>
+        <PopUp></PopUp>
       </div>
 
       {/* <div>

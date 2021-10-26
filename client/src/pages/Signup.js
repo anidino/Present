@@ -68,7 +68,7 @@ function Signup(props) {
               </div>
             </form>
             <Link to="/login" class="signup-link"> Already have an account?</Link> <br></br>
-            <Link to="/home" class="signup-link"><span role="img" aria-label="music"> ♫</span> Home</Link>
+            <Link to="/" class="signup-link"><span role="img" aria-label="music"> ♫</span> Home</Link>
           </div>
         </Col>
       </Row>
