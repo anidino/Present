@@ -9,6 +9,7 @@ import leaves from "../../assets/mountain.jpg";
 import pray from "../../assets/pray.jpg";
 import travel from "../../assets/travel.jpg";
 import QUERY_PLAYLISTS from "../../utils/queries";
+// import { useQuery } from '@apollo/client';
 
 function Playlists() {
   const [show, setShow] = useState(false);
