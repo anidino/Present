@@ -21,7 +21,6 @@ const Home = () => {
 
       <div>
         <Logo></Logo>
-        <PopUp></PopUp>
       </div>
 
       {/* <div>
