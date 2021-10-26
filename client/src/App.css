@@ -221,35 +221,3 @@ a:hover {
   z-index: 9999;
 }
 
-.signup-link {
-  color: var(--secondary);
-  font-family: 'Roboto' sans-serif;
-  font-size: 1rem;
-  text-decoration: none;
-}
-
-.signup-link:hover {
-  text-decoration: underline;
-  color: var(--secondary);
-}
-
-#login-box {
-  background-color: rgb(255, 255, 255, .6);
-  margin-top: 4rem;
-  height: 34rem;
-}
-
-.login {
-  color: var(--secondary);
-  font-family: 'Roboto' sans-serif;
-  font-size: 5rem;
-  font-weight: bolder;
-}
-
-.words-box {
-  width: 60%;
-}
-
-.image-box {
-  width: 40%;
-}

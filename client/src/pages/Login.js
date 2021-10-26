@@ -3,7 +3,11 @@ import { useMutation } from "@apollo/react-hooks";
 import { Link } from "react-router-dom";
 import { MUTATION_LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
-import dancer from "../assets/dancing_boomer.jpg";
+import "../login.css";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import dancer from '../assets/sign-up-rounded.jpg';
+
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -29,40 +33,41 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
-      <div class="container-sm" id="login-box">
+    <div class="container-sm" id="login-box">
+      <Row>
+        <Col class="image-box">
+        <img class="dancer" src= {dancer}></img>
+    </Col>
+        <Col>
+          <div class="words-box">
+            <br></br>
+            <h2 class="login"><span role="img" aria-label="music"> ♫</span>Present</h2>
+            <form onSubmit={handleFormSubmit}>
+              <div className="mb-3">
 
-        <div class="image-box">
-          <image src={dancer}></image>
-        </div>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" onChange={handleChange} />
+              </div>
+              <div className="mb-3">
+                <label for="pwd" class="form-label">Password</label>
+                <input type="password" class="form-control" type="password" id="pwd" onChange={handleChange} />
+              </div>
 
-
-        <div class="words-box">
-      <h2 class="login">Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="mb-3">
-
-    <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" onChange={handleChange} />
-        </div>
-        <div className="mb-3">
-        <label for="pwd" class="form-label">Password</label>
-    <input type="password" class="form-control" type="password" id="pwd" onChange={handleChange} />
-        </div>
-        
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+              {error ? (
+                <div>
+                  <p className="error-text">The provided credentials are incorrect</p>
+                </div>
+              ) : null}
+              <div className="flex-row flex-end">
+                <button type="submit" class="quote-button">LOGIN</button>
+              </div>
+            </form>
+            <Link to="/signup" class="signup-link"> or create an account</Link>
           </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit" class="quote-button">LOGIN</button>
-        </div>
-      </form>
-      <Link to="/signup" class="signup-link"> or create an account</Link>
+        </Col>
+      </Row>
     </div>
-    </div>
-    </div>
+
   );
 }
 
