@@ -40,11 +40,6 @@ const userSchema = new Schema(
     photoName: {
       type: String,
     },
-    // dashboardPhoto: {
-    //   //   type: Schema.Types.ObjectId,
-    //   //   ref: "Photo",
-    //   type: String,
-    // },
     photos: [
       {
         type: Schema.Types.ObjectId,

@@ -13,8 +13,17 @@ export const MUTATION_LOGIN = gql`
   }
 `;
 
-// export const MUTATION_ADDPLAYLISTS = gql`
-//   mutation AddPlaylistMutation($ids: [ID]!) {
-//     addPlaylist(_ids: $ids)
-//   }
-// `;
+export const ADD_USER = gql`
+  mutation LoginMutation($email: String!, $password: String!) {
+    signup(email: $email, password: $password) {
+      user {
+        _id
+        firstName
+        lastName
+        username
+        email
+      }
+      token
+    }
+  }
+`;
