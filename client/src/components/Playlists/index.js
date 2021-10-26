@@ -15,10 +15,6 @@ function Playlists() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // {
-  //   QUERY_PLAYLISTS;
-  // }
-
   return (
     <>
       <section className="my-5">
