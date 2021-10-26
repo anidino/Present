@@ -67,10 +67,12 @@ function Signup(props) {
                 <button type="submit" class="quote-button">SIGNUP</button>
               </div>
             </form>
-            <Link to="/login" class="signup-link"> or login</Link>
+            <Link to="/login" class="signup-link"> Already have an account?</Link> <br></br>
+            <Link to="/home" class="signup-link"><span role="img" aria-label="music"> ♫</span> Home</Link>
           </div>
         </Col>
       </Row>
+
     </div>
 
   );
