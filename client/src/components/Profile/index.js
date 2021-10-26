@@ -1,14 +1,19 @@
 import React from 'react';
-// import  { QUERY_USER }  from '../../utils/queries';
+import  { QUERY_USER }  from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 
 
 
 function Profile() {
 
-  // const queryUser = useQuery(QUERY_USER);
+  const { loading, error, data } = useQuery(QUERY_USER, {
+    fetchPolicy: "cache-and-network"
+  });
 
-  // console.log(queryUser);
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+
 
     return (
 <section className="my-5">
