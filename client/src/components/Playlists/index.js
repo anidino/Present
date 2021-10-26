@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
-import cat from "../../assets/cat.jpg";
-import orange from "../../assets/city.jpg";
-import wave from "../../assets/sea.jpg";
-import leaves from "../../assets/mountain.jpg";
-import pray from "../../assets/pray.jpg";
-import travel from "../../assets/travel.jpg";
+import black from "../../assets/absolute-black-granite.jpg";
 import { QUERY_PLAYLISTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
@@ -74,7 +69,7 @@ function Playlists() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src= {cat}
+      src= {black}
       alt="First Playlist"
     />
     <Carousel.Caption>
@@ -88,7 +83,7 @@ function Playlists() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={leaves}
+      src={black}
       alt="Second Playlist"
     />
 
@@ -103,7 +98,7 @@ function Playlists() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={orange}
+      src={black}
       alt="Third Playlist"
     />
 
@@ -118,7 +113,7 @@ function Playlists() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src= {travel}
+      src= {black}
       alt="Fourth Playlist"
     />
     <Carousel.Caption>
@@ -132,7 +127,7 @@ function Playlists() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={wave}
+      src={black}
       alt="Fifth Playlist"
     />
 
@@ -147,7 +142,7 @@ function Playlists() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={pray}
+      src={black}
       alt="Sixth Playlist"
     />
 
@@ -162,7 +157,7 @@ function Playlists() {
     <Carousel.Item>
     <img
       className="d-block w-100"
-      src={pray}
+      src={black}
       alt="Seventh Playlist"
     />
 
@@ -177,7 +172,7 @@ function Playlists() {
     <Carousel.Item>
     <img
       className="d-block w-100"
-      src={pray}
+      src={black}
       alt="Eight Playlist"
     />
 
@@ -192,7 +187,7 @@ function Playlists() {
     <Carousel.Item>
     <img
       className="d-block w-100"
-      src={pray}
+      src={black}
       alt="Ninth Playlist"
     />
 
