@@ -22,9 +22,10 @@ function Playlists() {
 
   const queryPlaylists = useQuery(QUERY_PLAYLISTS);
 
-  const playlistInfo = (queryPlaylists.data.playlists);
+  const playlistInfo = queryPlaylists.data.playlists;
 
   console.log(playlistInfo);
+
 
   const playlistPieceArray = [];
 
@@ -33,15 +34,15 @@ function Playlists() {
 
   for (let i = 0; i < playlistInfo.length; i++) {
 
-    var playlistPiece = playlistInfo[i].playlistUrl.split("us");
+    var playlistPiece = queryPlaylists.data.playlists[i].playlistUrl.split("us");
 
     playlistPieceArray.push(playlistPiece[1]);
 
-    console.log(playlistPiece[1]);
+    // console.log(playlistPiece[1]);
 
   }
 
-  console.log(playlistPieceArray[0]);
+  // console.log(playlistPieceArray[0]);
 
   for (let i = 0; i < playlistPieceArray.length; i++) {
 
@@ -80,7 +81,7 @@ function Playlists() {
       <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      <h3>{playlistInfo[0].playlistName}</h3>
+      <h3>{queryPlaylists.data.playlists[0].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[0]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -95,7 +96,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      <h3>{playlistInfo[1].playlistName}</h3>
+      <h3>{queryPlaylists.data.playlists[1].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[1]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -110,7 +111,7 @@ function Playlists() {
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      <h3>{playlistInfo[2].playlistName}</h3>
+      <h3>{queryPlaylists.data.playlists[2].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[2]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -118,13 +119,13 @@ function Playlists() {
     <img
       className="d-block w-100"
       src= {travel}
-      alt="First Playlist"
+      alt="Fourth Playlist"
     />
     <Carousel.Caption>
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      <h3>{playlistInfo[3].playlistName}</h3>
+      <h3>{queryPlaylists.data.playlists[3].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[3]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -132,14 +133,14 @@ function Playlists() {
     <img
       className="d-block w-100"
       src={wave}
-      alt="Second Playlist"
+      alt="Fifth Playlist"
     />
 
     <Carousel.Caption>
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      <h3>{playlistInfo[4].playlistName}</h3>
+      <h3>{queryPlaylists.data.playlists[4].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[4]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
@@ -147,17 +148,62 @@ function Playlists() {
     <img
       className="d-block w-100"
       src={pray}
-      alt="Third Playlist"
+      alt="Sixth Playlist"
     />
 
     <Carousel.Caption>
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
-      <h3>{playlistInfo[5].playlistName}</h3>
+      <h3>{queryPlaylists.data.playlists[5].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[5]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
-    </Carousel.Item>.
+    </Carousel.Item>
+    <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={pray}
+      alt="Seventh Playlist"
+    />
+
+    <Carousel.Caption>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+      </div>
+      <h3>{queryPlaylists.data.playlists[6].playlistName}</h3>
+      <iframe title="deezer-widget" src={srcUrlArray[6]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+    </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={pray}
+      alt="Eight Playlist"
+    />
+
+    <Carousel.Caption>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+      </div>
+      <h3>{queryPlaylists.data.playlists[7].playlistName}</h3>
+      <iframe title="deezer-widget" src={srcUrlArray[7]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+    </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src={pray}
+      alt="Ninth Playlist"
+    />
+
+    <Carousel.Caption>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+      </div>
+      <h3>{queryPlaylists.data.playlists[8].playlistName}</h3>
+      <iframe title="deezer-widget" src={srcUrlArray[8]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+    </Carousel.Caption>
+    </Carousel.Item>
 </Carousel>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
