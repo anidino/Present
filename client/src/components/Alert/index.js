@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Button from 'react-bootstrap/Alert';
 import Modal from 'react-bootstrap/Modal'
-import Link from 'react-bootstrap/Link';
 
 function PopUp() {
 
@@ -20,8 +19,7 @@ function PopUp() {
               <Modal.Header closeButton>
                 <Modal.Title>Start Listening</Modal.Title>
               </Modal.Header>
-              <Modal.Body>    <Link to="/signup" class="signup-link"> or create an account</Link></Modal.Body>
-              <Modal.Body>    <Link to="/signup" class="signup-link"> or sign in</Link></Modal.Body>
+              {/* <Modal.Body>    <Link to="/signup" class="signup-link"> or create an account</Link></Modal.Body> */}
               <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                   Close
