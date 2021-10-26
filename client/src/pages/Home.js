@@ -5,20 +5,23 @@ import Nav from "../components/Nav";
 import Gallery from "../components/Gallery";
 import Donate from "../components/Donate";
 import Logout from "../components/Logout";
-// import Login from "../components/Login";
 import Logo from '../components/Logo';
 import Playlists from "../components/Playlists";
 import Footer from "../components/Footer";
+import PopUp from "../components/Alert";
+import "../../src/App.css";
+
 
 const Home = () => {
   return (
-    <div className="container">
+    <div>
       <div>
         <Nav></Nav>
       </div>
 
       <div>
         <Logo></Logo>
+        <PopUp></PopUp>
       </div>
 
       {/* <div>
@@ -27,7 +30,7 @@ const Home = () => {
 
       <main>
         <Playlists></Playlists>
-  
+
         <Gallery></Gallery>
         <Quote></Quote>
         <Donate></Donate>

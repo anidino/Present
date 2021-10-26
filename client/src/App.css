@@ -40,7 +40,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
 }
 
 
@@ -101,8 +100,9 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9998;
+  z-index: 9997;
 }
+
 
 #text {
   color:var(--light);
@@ -160,18 +160,11 @@ a:hover {
   margin-top: 2rem;
 
 }
-
-
 .subhead {
   font-family: 'Roboto', sans-serif;
   font-size: 1.75rem;
+  color: var(--primary);
 }
-
-
-.modal {
-  z-index: 9999;
-}
-
 
 #logo-box {
   margin-top: 7rem;
@@ -194,6 +187,8 @@ a:hover {
 
 .jumbotext {
   text-align: center;
+  color: var(--light);
+  font-weight: bold;
 }
 
 .foot {
@@ -219,3 +214,8 @@ a:hover {
 .modal-body {
   color: var(--primary);
 }
+
+.modal {
+  z-index: 9999;
+}
+
