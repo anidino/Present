@@ -10,3 +10,21 @@ export const QUERY_PLAYLISTS = gql`
     }
   }
 `;
+
+export const QUERY_USER = gql`
+  query User {
+    user {
+      _id
+      email
+      username
+      firstName
+      lastName
+      playlists {
+        _id
+        playlistName
+        playlistUrl
+        reactions
+      }
+    }
+  }
+`;
