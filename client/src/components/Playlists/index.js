@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -9,52 +8,13 @@ import wave from "../../assets/sea.jpg";
 import leaves from "../../assets/mountain.jpg";
 import pray from "../../assets/pray.jpg";
 import travel from "../../assets/travel.jpg";
-import QUERY_PLAYLISTS from "../../utils/queries";
+// import QUERY_PLAYLISTS from "../../utils/queries";
 // import { useQuery } from '@apollo/client';
-
 
 function Playlists() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-
-  const queryPlaylists = useQuery(QUERY_PLAYLISTS);
-
-  const playlistInfo = queryPlaylists.data.playlists;
-
-  console.log(playlistInfo);
-
-
-  const playlistPieceArray = [];
-
-  const srcUrlArray = [];
-
-
-  for (let i = 0; i < playlistInfo.length; i++) {
-
-    var playlistPiece = queryPlaylists.data.playlists[i].playlistUrl.split("us");
-
-    playlistPieceArray.push(playlistPiece[1]);
-
-    // console.log(playlistPiece[1]);
-
-  }
-
-  // console.log(playlistPieceArray[0]);
-
-  for (let i = 0; i < playlistPieceArray.length; i++) {
-
-    let widgetUrl= "https://widget.deezer.com/widget/dark"
-
-    let playlistUrl = playlistPieceArray[i];
-
-    let combinedUrl = widgetUrl + playlistUrl; 
-
-    srcUrlArray.push(combinedUrl);
-  }
-
-  console.log(srcUrlArray);
 
   return (
     <>
@@ -72,7 +32,6 @@ function Playlists() {
           </Modal.Header>
           <Modal.Body class="modal-body">Select a playlist to add it to your dashboard!</Modal.Body>
           <Carousel>
-
             <Carousel.Item>
               <img className="d-block w-100" src={cat} alt="First Playlist" />
               <Carousel.Caption>
@@ -139,7 +98,6 @@ function Playlists() {
             </Carousel.Item>
             .
           </Carousel>
-
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
