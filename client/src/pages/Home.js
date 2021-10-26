@@ -8,7 +8,7 @@ import Logout from "../components/Logout";
 import Logo from '../components/Logo';
 import Playlists from "../components/Playlists";
 import Footer from "../components/Footer";
-import PopUp from "../components/Alert";
+import ProfileCard from "../components/ProfileCard";
 import "../../src/App.css";
 
 
@@ -34,6 +34,7 @@ const Home = () => {
         <Quote></Quote>
         <Donate></Donate>
         <Profile></Profile>
+        <ProfileCard></ProfileCard>
         {/* <Login></Login> */}
       </main>
       <div>
