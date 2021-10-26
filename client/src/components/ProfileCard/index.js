@@ -1,22 +1,20 @@
 import React from 'react';
 import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
+import dancer from "../../assets/dancing_boomer.jpg"
+// import { ADD_USER } from "../utils/mutations";
 
 function ProfileCard() {
   return (
     <MDBCard style={{ maxWidth: '540px' }}>
       <MDBRow className='g-0'>
         <MDBCol md='4'>
-          <MDBCardImage src='https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.jpg' alt='...' fluid />
+          <MDBCardImage src={dancer} alt='...' fluid />
         </MDBCol>
         <MDBCol md='8'>
           <MDBCardBody>
-            <MDBCardTitle>Card title</MDBCardTitle>
+            <MDBCardTitle>Welcome Bob </MDBCardTitle>
             <MDBCardText>
-              This is a wider card with supporting text below as a natural lead-in to additional content. This
-              content is a little bit longer.
-            </MDBCardText>
-            <MDBCardText>
-              <small className='text-muted'>Last updated 3 mins ago</small>
+              Explore new playlists and save your favorites to your personal dashboard!
             </MDBCardText>
           </MDBCardBody>
         </MDBCol>

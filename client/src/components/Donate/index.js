@@ -20,16 +20,11 @@ function Donate() {
         <Modal.Header closeButton>
           <Modal.Title class="modal-title">Donate Here</Modal.Title>
         </Modal.Header>
-        <Modal.Body class="modal-body">Fill out your information below.
+        <Modal.Body class="modal-body">
         <form>
           <div class="form-group">
-            <label for="exampleEmail">Email address</label>
-            <input type="email" class="form-control" id="exampleEmail" aria-describedby="emailHelp" placeholder="Enter email"></input>
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleDonation">Donation</label>
-            <input type="number" class="form-control" id="exampleInputDonation" placeholder="$100.00"></input>
+            <label for="exampleDonation">Donation Amount</label>
+            <input type="currency" class="form-control" id="exampleInputDonation" placeholder="$100.00"></input>
           </div>
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1"></input>
