@@ -6,7 +6,7 @@ import Auth from "../utils/auth";
 import "../login.css";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import dancer from '../assets/sign-up-rounded.jpg';
+import dancer from '../assets/sign-up-2.jpg';
 
 
 function Login(props) {
