@@ -1,5 +1,12 @@
 # Present
 
+- [Description](#what-are-we?)
+- [Technologies Used](#created-with)
+- [Screenshots of Deployed Application](#screenshots)
+- [Link to Deployed Application](#link-to-deployed-application)
+- [The Team](#the-team)
+- [For the Future](#for-the-future)
+
 ## What are We?
 
 Present is an application that is meant to keep a person, just as the name intends, in the present moment. Our app is designed specifically to cater to those who may be suffering from memory loss, but can also benefit anyone in a distressed state of mind. Using both music and imagery, we offer the user a distraction, so that they may feel a sense of calm in the moment and focus on what is in front of them - beautiful images and various music clips. The user or their loved one can also write a note below the images where the music is heard. We encourage the user or loved one assisting, to write about any feelings or memories that come about during this sensory experience.
