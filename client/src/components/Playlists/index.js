@@ -9,8 +9,8 @@ import wave from "../../assets/sea.jpg";
 import leaves from "../../assets/mountain.jpg";
 import pray from "../../assets/pray.jpg";
 import travel from "../../assets/travel.jpg";
-import QUERY_PLAYLISTS from "../../utils/queries";
-
+import { QUERY_PLAYLISTS } from "../../utils/queries";
+import { useQuery } from "@apollo/client";
 
 function Playlists() {
   const [show, setShow] = useState(false);
@@ -72,7 +72,6 @@ function Playlists() {
           </Modal.Header>
           <Modal.Body class="modal-body">Select a playlist to add it to your dashboard!</Modal.Body>
           <Carousel>
-<<<<<<< HEAD
   <Carousel.Item>
     <img
       className="d-block w-100"
@@ -207,76 +206,6 @@ function Playlists() {
     </Carousel.Caption>
     </Carousel.Item>
 </Carousel>
-=======
-
-            <Carousel.Item>
-              <img className="d-block w-100" src={cat} alt="First Playlist" />
-              <Carousel.Caption>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
-                </div>
-                <h3>Playlist Name</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={leaves} alt="Second Playlist" />
-
-              <Carousel.Caption>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
-                </div>
-                <h3>Playlist Name</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={orange} alt="Third Playlist" />
-
-              <Carousel.Caption>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
-                </div>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={travel} alt="First Playlist" />
-              <Carousel.Caption>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
-                </div>
-                <h3>Playlist Name</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={wave} alt="Second Playlist" />
-
-              <Carousel.Caption>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
-                </div>
-                <h3>Playlist Name</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img className="d-block w-100" src={pray} alt="Third Playlist" />
-
-              <Carousel.Caption>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
-                </div>
-                <h3>Playlist Name</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            .
-          </Carousel>
-
->>>>>>> main
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
