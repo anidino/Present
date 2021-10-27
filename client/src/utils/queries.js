@@ -28,3 +28,32 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+
+export const QUERY_PHOTOS = gql`
+  query Photos {
+    photos {
+      _id
+      name
+      desc
+      imageLink
+    }
+  }
+`;
+
+export const QUERY_PHOTOS_and_PLAYLISTS = gql`
+  query PhotosandPlaylists {
+    photos {
+      _id
+      name
+      desc
+      imageLink
+    }
+    playlists {
+        _id
+        playlistName
+        playlistUrl
+        username
+    }
+  }
+`;

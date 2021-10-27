@@ -5,10 +5,10 @@ const photoSchema = new Schema(
   {
     name: String,
     desc: String,
-    img: {
-      data: Buffer,
-      contentType: String,
-    },
+    // img: {
+    //   data: Buffer,
+    //   contentType: String,
+    // },
     imageLink: {
       type: String,
       //   required: true,

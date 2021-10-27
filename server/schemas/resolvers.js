@@ -24,20 +24,19 @@ const resolvers = {
 
         return userData;
       }
-
+      
       throw new AuthenticationError("Not logged in");
     },
     users: async (parent, args, context) => {
       //return all the users
-      return await User.find()
-        .select("-__v -password")
-        .populate("username")
-        .populate("email")
-        .populate("firstName")
-        .populate("lastName")
-        .populate("photoName")
-        .populate("photos")
-        .populate("playlists");
+      return await User.find().select("-__v -password")
+      .populate("username")
+      .populate("email")
+      .populate("firstName")
+      .populate("lastName")
+      .populate("photoName")
+      .populate("photos")
+      .populate("playlists");
     },
     photos: async (parent, { imageLink }) => {
       //   const params = imageLink ? { imageLink } : {};
@@ -52,18 +51,6 @@ const resolvers = {
     addUser: async (parent, args) => {
       //   console.log("ARGS **********", args);
       const user = await User.create(args);
-      // .then(
-      //   (data, data1) => {
-      //     console.log({ data, data1 });
-      //     return data;
-      //   },
-      //   (err) => {
-      //     if (err) {
-      //       throw new Error(err);
-      //     }
-      //   }
-      // );
-
       const token = signToken(user);
 
       return { token, user };
@@ -136,14 +123,6 @@ const resolvers = {
       //   console.log({ new_playlist, old_playlist });
       return await User.updateOne(query, { $set: { playlists: new_playlist } }).then((res) => true);
     },
-    addReaction: async (parent, args, context) => {
-      let query = { _ids: context.user._ids };
-      let currentPlaylistId = (await User.findOne(query)).playlists[0];
-
-      await Playlist.findByIdAndUpdate({ _id: currentPlaylistId }, { $push: { reactions: "test reaction" } }, { new: true });
-
-      return "reaction successfully added";
-    },
     //delete route is functional, no more issue with sandbox
     deletePlaylist: async (parent, args, context) => {
       if (!args._ids.length) throw new Error("Playlist ID missing");
@@ -159,11 +138,12 @@ const resolvers = {
       // returns id that is deleted
     },
     addPlaylistReaction: async (parent, { playlist_id, title, reactionBody }, context) => {
-      if (context.user) {
+    
+      if(context.user) {
+
         let username = context.user.username;
 
-        const updatedPlaylist = await Playlist.findOneAndUpdate(
-          { _id: playlist_id },
+        const updatedPlaylist = await Playlist.findOneAndUpdate({ _id: playlist_id},
           { $push: { reactions: { username, title, reactionBody } } },
           { new: true, runValidators: true }
         );
@@ -171,43 +151,42 @@ const resolvers = {
         return updatedPlaylist;
       }
 
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError('You need to be logged in!');
     },
     deletePlaylistReaction: async (parent, { playlist_id, reaction_id }, context) => {
-      if (context.user) {
-        const updatedPlaylist = await Playlist.findOneAndUpdate(
-          { _id: playlist_id },
-          { $pull: { reactions: { _id: reaction_id } } },
+
+      if(context.user) {
+        const updatedPlaylist = await Playlist.findOneAndUpdate({ _id: playlist_id },
+          {$pull: { reactions: {_id: reaction_id } } },
           { new: true, runValidators: true }
         );
 
         return updatedPlaylist;
       }
 
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError('You need to be logged in!');
     },
     updatePlaylistReaction: async (parent, { playlist_id, reaction_id, title, reactionBody }, context) => {
-      if (context.user) {
+      if(context.user) {
+
         let username = context.user.username;
 
-        // removes the old reactions from the array
-        const deleteOldReaction = await Playlist.findOneAndUpdate(
-          { _id: playlist_id },
-          { $pull: { reactions: { _id: reaction_id } } },
+        // removes the old reactions from the array 
+        const deleteOldReaction = await Playlist.findOneAndUpdate({ _id: playlist_id },
+          {$pull: { reactions: { _id: reaction_id } } },
           { new: true, runValidators: true }
         );
-
-        // creates a new reaction and pushes it into the array in place of the old one
-        const pushUpdatedReaction = await Playlist.findOneAndUpdate(
-          { _id: playlist_id },
-          { $push: { reactions: { username, title, reactionBody } } },
+      
+        // creates a new reaction and pushes it into the array in place of the old one 
+        const pushUpdatedReaction = await Playlist.findOneAndUpdate({ _id: playlist_id },
+          {$push: { reactions: { username, title, reactionBody } } },
           { new: true, runValidators: true }
         );
 
         return pushUpdatedReaction;
       }
 
-      throw new AuthenticationError("You need to be logged in!");
+      throw new AuthenticationError('You need to be logged in!');
     },
   },
 };
