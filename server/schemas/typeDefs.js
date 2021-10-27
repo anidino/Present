@@ -18,7 +18,7 @@ const typeDefs = gql`
     _id: ID
     name: String
     desc: String
-    source: String
+    imageLink: String
     username: String
   }
 
