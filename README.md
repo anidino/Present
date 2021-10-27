@@ -27,9 +27,11 @@ Present is an application that is meant to keep a person, just as the name inten
 - Bcrypt
 - Heroku
 
-## Screenshots of Deployed Application
-<!--  Screencastify of Application -->
+## Video of Deployed Application
 https://watch.screencastify.com/v/STL5EQLNUdL8vYo7hwQv
+
+
+## Screenshots of Deployed Application
 <!-- Login Screen -->
 ![image](https://user-images.githubusercontent.com/81602695/139149097-f3a97188-df5c-4890-94b7-94a1aef2d662.png)
 <!-- Sign Up Screen -->
