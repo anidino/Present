@@ -1,7 +1,7 @@
 import React from "react";
 import Profile from "../components/Profile";
 import Quote from "../components/Quote";
-import Nav from "../components/Nav";
+import Navigate from "../components/Nav";
 import Gallery from "../components/Gallery";
 import Donate from "../components/Donate";
 import Logout from "../components/Logout";
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div>
       <div>
-        <Nav></Nav>
+        <Navigate></Navigate>
       </div>
 
       <div>

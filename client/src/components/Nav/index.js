@@ -28,61 +28,65 @@ function Navigate() {
   );
 }
 
+
 export default Navigate;
 
-// import Auth from "../../utils/auth";
-// import { Link } from "react-router-dom";
 
-// function Nav() {
 
-//   function showNavigation() {
-//     if (Auth.loggedIn()) {
-//       return (
-//         <ul className="flex-row">
-//           <li className="mx-1">
-//             <Link to="/penpals">
-//               Penpals
-//             </Link>
-//           </li>
-//           <li className="mx-1">
-//             {}
-//             <a href="/" onClick={() => Auth.logout()}>
-//               Logout
-//             </a>
-//           </li>
-//         </ul>
-//       );
-//     } else {
-//       return (
-//         <ul className="flex-row">
-//           <li className="mx-1">
-//             <Link to="/signup">
-//               Signup
-//             </Link>
-//           </li>
-//           <li className="mx-1">
-//             <Link to="/login">
-//               Login
-//             </Link>
-//           </li>
-//         </ul>
-//       );
-//     }
-//   }
 
-//   return (
-//     <header className="flex-row px-1">
-//       <h1>
-//         <Link to="/playlists">
-//          Playlists
-//         </Link>
-//       </h1>
 
-//       <nav>
-//         {showNavigation()}
-//       </nav>
-//     </header>
-//   );
+
+// import React, { Component } from 'react';
+// import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCollapse, MDBContainer,
+// MDBHamburgerToggler } from 'mdbreact';
+// import { BrowserRouter as Router } from 'react-router-dom';
+
+// class NavbarPage extends Component {
+// state = {
+//   collapse1: false,
+//   collapseID: ''
 // }
 
-// export default Nav;
+// toggleCollapse = collapseID => () => {
+//   this.setState(prevState => ({ collapseID: (prevState.collapseID !== collapseID ? collapseID : '') }));
+// }
+
+// toggleSingleCollapse = collapseId => {
+//   this.setState({
+//     ...this.state,
+//     [collapseId]: !this.state[collapseId]
+//   });
+// }
+
+// render() {
+//   return (
+//     <Router>
+//       <MDBContainer>
+//         <MDBNavbar color="amber lighten-4" style={{ marginTop: '20px' }} light>
+//           <MDBContainer>
+//             <MDBNavbarBrand>
+//               MDBNavbar
+//             </MDBNavbarBrand>
+//             <MDBHamburgerToggler color="#d3531a" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} />
+//               <MDBCollapse isOpen={this.state.collapse1} navbar>
+//                 <MDBNavbarNav left>
+//                   <MDBNavItem active>
+//                     <MDBNavLink to="#!">Home</MDBNavLink>
+//                   </MDBNavItem>
+//                   <MDBNavItem>
+//                     <MDBNavLink to="#!">Link</MDBNavLink>
+//                   </MDBNavItem>
+//                   <MDBNavItem>
+//                     <MDBNavLink to="#!">Profile</MDBNavLink>
+//                   </MDBNavItem>
+//                 </MDBNavbarNav>
+//               </MDBCollapse>
+//           </MDBContainer>
+//         </MDBNavbar>
+//       </MDBContainer>
+//     </Router>
+//     );
+//   }
+// }
+
+// export default NavbarPage;
