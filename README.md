@@ -2,7 +2,7 @@
 
 - [Description](#what-are-we?)
 - [Technologies Used](#created-with)
-- [Screenshots of Deployed Application](#screenshots)
+- [Screenshots of Deployed Application](#screenshots-of-deployed-application)
 - [Link to Deployed Application](#link-to-deployed-application)
 - [The Team](#the-team)
 - [For the Future](#for-the-future)
@@ -23,6 +23,10 @@ CSS
 JSX
 JavaScript
 Git
+
+## Screenshots of Deployed Application
+
+## Link to Deployed Application
 
 ## The Team
 
