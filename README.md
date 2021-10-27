@@ -28,6 +28,15 @@ Present is an application that is meant to keep a person, just as the name inten
 - Heroku
 
 ## Screenshots of Deployed Application
+<!--  Screencastify of Application -->
+https://watch.screencastify.com/v/STL5EQLNUdL8vYo7hwQv
+<!-- Login Screen -->
+![image](https://user-images.githubusercontent.com/81602695/139149097-f3a97188-df5c-4890-94b7-94a1aef2d662.png)
+<!-- Sign Up Screen -->
+![image](https://user-images.githubusercontent.com/81602695/139149298-f4cceaaa-2e33-447d-96d7-1a245c3232cc.png)
+<!-- Home Screen -->
+
+
 
 ## Link to Deployed Application
 
