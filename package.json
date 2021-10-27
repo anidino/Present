@@ -1,6 +1,7 @@
 {
   "name": "present",
   "version": "1.0.0",
+  
   "description": "",
   "main": "server/server.js",
   "scripts": {
@@ -11,18 +12,13 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anidino/Present.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^6.3.0",
     "if-env": "^1.0.4"
   },
-  "bugs": {
-    "url": "https://github.com/anidino/Present/issues"
-  },
-  "homepage": "https://github.com/anidino/Present#readme"
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
 }
