@@ -1,14 +1,8 @@
-
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
-import cat from "../../assets/cat.jpg";
-import orange from "../../assets/city.jpg";
-import wave from "../../assets/sea.jpg";
-import leaves from "../../assets/mountain.jpg";
-import pray from "../../assets/pray.jpg";
-import travel from "../../assets/travel.jpg";
+import black from "../../assets/absolute-black-granite.jpg";
 import { QUERY_PLAYLISTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
@@ -75,7 +69,7 @@ function Playlists() {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src= {cat}
+      src= {black}
       alt="First Playlist"
     />
     <Carousel.Caption>
@@ -83,13 +77,13 @@ function Playlists() {
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[0].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[0]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[0]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={leaves}
+      src={black}
       alt="Second Playlist"
     />
 
@@ -98,13 +92,13 @@ function Playlists() {
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[1].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[1]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[1]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={orange}
+      src={black}
       alt="Third Playlist"
     />
 
@@ -113,13 +107,13 @@ function Playlists() {
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[2].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[2]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[2]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src= {travel}
+      src= {black}
       alt="Fourth Playlist"
     />
     <Carousel.Caption>
@@ -127,13 +121,13 @@ function Playlists() {
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[3].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[3]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[3]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={wave}
+      src={black}
       alt="Fifth Playlist"
     />
 
@@ -142,13 +136,13 @@ function Playlists() {
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[4].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[4]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[4]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={pray}
+      src={black}
       alt="Sixth Playlist"
     />
 
@@ -157,13 +151,13 @@ function Playlists() {
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[5].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[5]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[5]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
     <img
       className="d-block w-100"
-      src={pray}
+      src={black}
       alt="Seventh Playlist"
     />
 
@@ -172,13 +166,13 @@ function Playlists() {
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[6].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[6]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[6]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
     <img
       className="d-block w-100"
-      src={pray}
+      src={black}
       alt="Eight Playlist"
     />
 
@@ -187,13 +181,13 @@ function Playlists() {
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[7].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[7]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[7]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
     <img
       className="d-block w-100"
-      src={pray}
+      src={black}
       alt="Ninth Playlist"
     />
 
@@ -202,7 +196,7 @@ function Playlists() {
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
       </div>
       <h3>{data.playlists[8].playlistName}</h3>
-      <iframe title="deezer-widget" src={srcUrlArray[8]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
+      <iframe title="deezer-widget" src={srcUrlArray[8]} width="400" height="250" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
     </Carousel.Caption>
     </Carousel.Item>
 </Carousel>
