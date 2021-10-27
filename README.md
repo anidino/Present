@@ -13,16 +13,19 @@ Present is an application that is meant to keep a person, just as the name inten
 
 ## Created With
 
-React
-Node
-Express
-MongoDB & Mongoose
-GRAPHQL
-Apollo Server
-CSS
-JSX
-JavaScript
-Git
+- React
+- Node
+- Express
+- MongoDB & Mongoose ORM
+- GRAPHQL
+- Apollo Server
+- CSS
+- JSX
+- JavaScript
+- Git
+- JWT Authentication
+- Bcrypt
+- Heroku
 
 ## Screenshots of Deployed Application
 
