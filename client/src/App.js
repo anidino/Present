@@ -5,18 +5,16 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
-
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   return (
     <div>
-
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/" component={Home} />
+        <PrivateRoute path="/" component={Home} />
       </Switch>
-
     </div>
   );
 }
