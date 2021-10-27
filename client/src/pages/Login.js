@@ -35,7 +35,7 @@ function Login(props) {
     <div class="container-sm" id="login-box">
       <Row>
         <Col class="image-box">
-          <img class="dancer" src={dancer}></img>
+          <img class="dancer" src={dancer} alt="a dancer"></img>
         </Col>
         <Col>
           <div class="words-box">
@@ -58,7 +58,7 @@ function Login(props) {
                 <label for="pwd" class="form-label">
                   Password
                 </label>
-                <input type="password" name="password" class="form-control" type="password" id="pwd" onChange={handleChange} />
+                <input type="password" name="password" class="form-control" id="pwd" onChange={handleChange} />
               </div>
 
               {error ? (

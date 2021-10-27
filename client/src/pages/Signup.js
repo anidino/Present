@@ -8,7 +8,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import dancer from "../assets/sign-up-2.jpg";
 
-function Signup(props) {
+function Signup() {
   const [formState, setFormState] = useState({ name: "", email: "", password: "", firstName: "", lastName: "", username: "" });
   const [addUser] = useMutation(ADD_USER);
 
@@ -40,7 +40,7 @@ function Signup(props) {
     <div class="container-sm" id="signup-box">
       <Row>
         <Col class="image-box">
-          <img class="dancer" id="login-image" src={dancer}></img>
+          <img class="dancer" id="login-image" src={dancer} alt="dancer"></img>
         </Col>
         <Col>
           <div class="words-box">
@@ -81,7 +81,7 @@ function Signup(props) {
                 <label for="pwd" class="form-label">
                   Password
                 </label>
-                <input type="password" class="form-control" type="password" id="pwd" name="password" onChange={handleChange} required />
+                <input type="password" class="form-control" id="pwd" name="password" onChange={handleChange} required />
               </div>
 
               <div className="flex-row flex-end">
