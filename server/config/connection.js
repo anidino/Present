@@ -4,8 +4,8 @@ const cloudinary = require("cloudinary");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/present", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  //   useCreateIndex: true,
-  //   useFindAndModify: false,
+  // useCreateIndex: true,
+  // useFindAndModify: false,
 });
 
 // import cloudinary for images
