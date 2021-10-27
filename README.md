@@ -31,6 +31,8 @@ Present is an application that is meant to keep a person, just as the name inten
 
 ## Link to Deployed Application
 
+[Visit the Deployed Application](https://calm-meadow-36638.herokuapp.com/)
+
 ## The Team
 
 [Ani Carr](https://github.com/anidino)
