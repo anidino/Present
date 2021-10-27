@@ -35,6 +35,13 @@ https://watch.screencastify.com/v/STL5EQLNUdL8vYo7hwQv
 <!-- Sign Up Screen -->
 ![image](https://user-images.githubusercontent.com/81602695/139149298-f4cceaaa-2e33-447d-96d7-1a245c3232cc.png)
 <!-- Home Screen -->
+![image](https://user-images.githubusercontent.com/81602695/139157804-6a8863aa-a323-45ab-aaac-941b2b991420.png)
+<!-- Gallery -->
+![image](https://user-images.githubusercontent.com/81602695/139157875-22b7b6e5-6f4a-4a86-8096-9cdf13541441.png)
+<!-- Donate and Quote -->
+![image](https://user-images.githubusercontent.com/81602695/139157938-234cc89b-21fe-403e-9f46-4cadb2a13416.png)
+<!-- Bob, Logout, and Footer -->
+![image](https://user-images.githubusercontent.com/81602695/139158040-3354b4cd-8b19-49c7-ae8b-599e9702957a.png)
 
 
 
