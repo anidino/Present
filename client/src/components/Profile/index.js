@@ -3,7 +3,7 @@ import { QUERY_USER } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
 function Profile() {
-  const { loading, error, data } = useQuery(QUERY_USER, {
+  const { loading, error } = useQuery(QUERY_USER, {
     fetchPolicy: "cache-and-network",
   });
 
