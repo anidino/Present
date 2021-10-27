@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Carousel from "react-bootstrap/Carousel";
-import cat from "../../assets/cat.jpg";
-import orange from "../../assets/city.jpg";
-import wave from "../../assets/sea.jpg";
-import leaves from "../../assets/mountain.jpg";
-import pray from "../../assets/pray.jpg";
-import travel from "../../assets/travel.jpg";
+import black from "../../assets/absolute-black-granite.jpg";
 import { QUERY_PLAYLISTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
@@ -47,7 +42,7 @@ function Playlists() {
     srcUrlArray.push(combinedUrl);
   }
 
-  console.log(srcUrlArray);
+  // console.log(srcUrlArray);
 
   return (
     <>
@@ -66,7 +61,7 @@ function Playlists() {
           <Modal.Body class="modal-body">Select a playlist to add it to your dashboard!</Modal.Body>
           <Carousel>
             <Carousel.Item>
-              <img className="d-block w-100" src={cat} alt="First Playlist" />
+              <img className="d-block w-100" src={black} alt="First Playlist" />
               <Carousel.Caption>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
@@ -76,7 +71,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[0]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
@@ -84,7 +79,7 @@ function Playlists() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={leaves} alt="Second Playlist" />
+              <img className="d-block w-100" src={black} alt="Second Playlist" />
 
               <Carousel.Caption>
                 <div class="form-check">
@@ -95,7 +90,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[1]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
@@ -103,7 +98,7 @@ function Playlists() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={orange} alt="Third Playlist" />
+              <img className="d-block w-100" src={black} alt="Third Playlist" />
 
               <Carousel.Caption>
                 <div class="form-check">
@@ -114,7 +109,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[2]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
@@ -122,7 +117,7 @@ function Playlists() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={travel} alt="Fourth Playlist" />
+              <img className="d-block w-100" src={black} alt="Fourth Playlist" />
               <Carousel.Caption>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
@@ -132,7 +127,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[3]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
@@ -140,7 +135,7 @@ function Playlists() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={wave} alt="Fifth Playlist" />
+              <img className="d-block w-100" src={black} alt="Fifth Playlist" />
 
               <Carousel.Caption>
                 <div class="form-check">
@@ -151,7 +146,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[4]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
@@ -159,7 +154,7 @@ function Playlists() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={pray} alt="Sixth Playlist" />
+              <img className="d-block w-100" src={black} alt="Sixth Playlist" />
 
               <Carousel.Caption>
                 <div class="form-check">
@@ -170,7 +165,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[5]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
@@ -178,7 +173,7 @@ function Playlists() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={pray} alt="Seventh Playlist" />
+              <img className="d-block w-100" src={black} alt="Seventh Playlist" />
 
               <Carousel.Caption>
                 <div class="form-check">
@@ -189,7 +184,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[6]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
@@ -197,7 +192,7 @@ function Playlists() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={pray} alt="Eight Playlist" />
+              <img className="d-block w-100" src={black} alt="Eight Playlist" />
 
               <Carousel.Caption>
                 <div class="form-check">
@@ -208,7 +203,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[7]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
@@ -216,7 +211,7 @@ function Playlists() {
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={pray} alt="Ninth Playlist" />
+              <img className="d-block w-100" src={black} alt="Ninth Playlist" />
 
               <Carousel.Caption>
                 <div class="form-check">
@@ -227,7 +222,7 @@ function Playlists() {
                   title="deezer-widget"
                   src={srcUrlArray[8]}
                   width="400"
-                  height="150"
+                  height="250"
                   frameborder="0"
                   allowtransparency="true"
                   allow="encrypted-media; clipboard-write"
