@@ -11,6 +11,15 @@ import pray from "../../assets/pray.jpg";
 import travel from "../../assets/travel.jpg";
 import { QUERY_PLAYLISTS } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
+import { LinkPreview } from '@dhaiwat10/react-link-preview';
+
+// this.value could equal the srcURL for the playlist 
+// this refers to the checkbox the user uses
+// we can assign an onclick function to the checkbox 
+
+
+
+
 
 function Playlists() {
   const [show, setShow] = useState(false);
@@ -54,7 +63,43 @@ function Playlists() {
     srcUrlArray.push(combinedUrl);
   }
 
-  // console.log(srcUrlArray);
+  console.log(srcUrlArray);
+
+  var epmtyDiv = function() {
+
+  }
+
+  var testTheory = function() {
+    
+    var html =`
+    <iframe 
+      title="deezer-widget" 
+      src={srcUrlArray[0]} 
+      width="785" 
+      height="150" 
+      frameborder="0" 
+      allowtransparency="true" 
+      allow="encrypted-media; clipboard-write">
+    </iframe>`;
+
+    var emptyDiv = ` <div> </div>`;
+
+
+    document.getElementById("testTheory").innerHTML = String(html);
+
+
+    console.log(html);
+    
+
+    // document.getElementById(event.target.id).addEventListener('change', function() {
+    //   if(this.checked) {
+    //     document.getElementById("testTheory").innerHTML = html;
+    //   } else {
+    //     document.getElementById("testTheory").innerHTML = emptyDiv;
+    //   }
+    // });
+  }
+
 
   return (
     <>
@@ -80,7 +125,7 @@ function Playlists() {
     />
     <Carousel.Caption>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></input>
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1"></input>
       </div>
       <h3>{data.playlists[0].playlistName}</h3>
       <iframe title="deezer-widget" src={srcUrlArray[0]} width="400" height="150" frameborder="0" allowtransparency="true" allow="encrypted-media; clipboard-write"></iframe>
@@ -210,7 +255,7 @@ function Playlists() {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button class="quote-button" onClick={handleClose}>
+            <Button class="quote-button" onClick={testTheory}>
               Save Changes
             </Button>
           </Modal.Footer>
