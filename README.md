@@ -9,7 +9,7 @@
 
 ## What are We?
 
-Present is an application that is meant to keep a person, just as the name intends, in the present moment. Our app is designed specifically to cater to those who may be suffering from memory loss, but can also benefit anyone in a distressed state of mind. Using both music and imagery, we offer the user a distraction, so that they may feel a sense of calm in the moment and focus on what is in front of them - beautiful images and various music clips. The user or their loved one can also write a note below the images where the music is heard. We encourage the user or loved one assisting, to write about any feelings or memories that come about during this sensory experience.
+Present is an application that is meant to keep a person, just as the name intends, in the present moment. Our app is designed specifically to cater to those who may be suffering from memory loss, but can also benefit anyone in a distressed state of mind. Using both music and imagery, we offer the user a distraction, so that they may feel a sense of calm in the moment and focus on what is in front of them - beautiful images and various music clips. The user or their loved one can also write a note below the images where the music is heard. We encourage the user or loved one assisting, to write about any feelings or memories that come about during this sensory experience. In addition to these features, the user is also able to see an inspirational quote by clicking the "New Quote" button at the bottom.
 
 ## Created With
 
@@ -59,4 +59,4 @@ Front-End Lead Developer
 ## For the Future
 
 In the future we would like to implement functionality allowing the user to donate directly to the Alzheimer's Association from our website.
-We would also like to expand our collection of music and images and add additional features that may be enjoyable for the user and/or their loved ones.
+We would also like to expand our collection of music and images and add additional features that may be enjoyable for the user and their loved ones.
