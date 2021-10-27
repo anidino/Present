@@ -5,7 +5,28 @@ import Nav from "react-bootstrap/Nav";
 
 function Navigate() {
   return (
-    <Navbar id="nav" variant="light">
+//     <Navbar id="nav" variant="light">
+//       <Container>
+//         <Navbar.Brand href="#present">
+//           {" "}
+//           <span role="img" aria-label="music">
+//             {" "}
+//             ♫
+//           </span>
+//           Present
+//         </Navbar.Brand>
+//         <Nav className="me-auto">
+//           <Nav.Link href="#playlists">Playlists</Nav.Link>
+//           <Nav.Link href="#donate">Donate</Nav.Link>
+//           <Nav.Link href="#profile">My Profile</Nav.Link>
+//           <Nav.Link href="#logout">Logout</Nav.Link>
+//         </Nav>
+//       </Container>
+//     </Navbar>
+//   );
+// }
+
+    <Navbar id="nav" variant="light" expand="lg">
       <Container>
         <Navbar.Brand href="#present">
           {" "}
@@ -15,11 +36,13 @@ function Navigate() {
           </span>
           Present
         </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav"/>
         <Nav className="me-auto">
-          <Nav.Link href="#playlists">Playlists</Nav.Link>
-          <Nav.Link href="#donate">Donate</Nav.Link>
-          <Nav.Link href="#profile">My Profile</Nav.Link>
-          <Nav.Link href="#logout">Logout</Nav.Link>
+          <Nav.Link  id="navLink" href="#playlists">Playlists</Nav.Link>
+          <Nav.Link  id="navLink" href="#donate">Donate</Nav.Link>
+          <Nav.Link  id="navLink" href="#profile">My Profile</Nav.Link>
+          <Nav.Link  id="navLink" href="#logout">Logout</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
