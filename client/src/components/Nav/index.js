@@ -19,6 +19,8 @@ function Navigate() {
           <Nav.Link href="#playlists">Playlists</Nav.Link>
           <Nav.Link href="#donate">Donate</Nav.Link>
           <Nav.Link href="#profile">My Profile</Nav.Link>
+          <Nav.Link href="login">Log In</Nav.Link>
+          <Nav.Link href="signup">Sign Up</Nav.Link>
           <Nav.Link href="#logout">Logout</Nav.Link>
         </Nav>
       </Container>
