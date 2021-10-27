@@ -47,7 +47,7 @@ function Playlists() {
     srcUrlArray.push(combinedUrl);
   }
 
-  // console.log(srcUrlArray);
+  console.log(srcUrlArray);
 
   return (
     <>

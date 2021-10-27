@@ -1,0 +1,28 @@
+{
+  "name": "present",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "watch": "npm-watch-*",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anidino/Present.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.3.0",
+    "if-env": "^1.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/anidino/Present/issues"
+  },
+  "homepage": "https://github.com/anidino/Present#readme"
+}
