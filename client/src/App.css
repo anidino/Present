@@ -216,3 +216,6 @@ a:hover {
 }
 
 
+.links {
+  display: flex;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { MDBCard, MDBCardTitle, MDBCardText, MDBCardBody, MDBCardImage, MDBRow, MDBCol } from 'mdb-react-ui-kit';
-import dancer from "../../assets/dancing_boomer.jpg"
+import dancer from "../../assets/dancer.jpg"
 // import { ADD_USER } from "../utils/mutations";
 
 function ProfileCard() {
