@@ -20,9 +20,19 @@ MongoDB & Mongoose
 GRAPHQL
 Apollo Server
 CSS
+React-Bootstrap
 JSX
 JavaScript
+Third Party APIs
+Moment.js
 Git
+
+## Screenshots
+
+
+## Link to Deployed Application 
+
+Our application is now live! Visit our site on [Heroku](LINK TO DEPLOYED HEROKU APP HERE)
 
 ## The Team
 
@@ -32,19 +42,22 @@ Team Leader & Back-End Lead Developer
 - GraphQL
 - MongoDB & Mongoose
 - React
+- Deployment
 
 [Ryan Jolley](https://github.com/ryanjolley12)
 Front-End Lead Developer
 
 - React
-- CSS
+- CSS/Bootstrap
 - JavaScript
+- Third Party APIs
 
 [Jorge Martinez](https://github.com/JAMart01)
 
 - React
 - GraphQL
 - Styling Assist
+- Deployment
 
 [Devin Simpson](https://github.com/0xZ3n)
 
@@ -55,4 +68,5 @@ Front-End Lead Developer
 ## For the Future
 
 In the future we would like to implement functionality allowing the user to donate directly to the Alzheimer's Association from our website.
+Users will be able to access more stats about their listens, connect with other users, and upload a personal photo in their profile section.
 We would also like to expand our collection of music and images and add additional features that may be enjoyable for the user and/or their loved ones.
